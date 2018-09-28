@@ -1,0 +1,1724 @@
+
+<div class="flotante_izquierdo resizeimage">
+  <img src="../../assets/Escudo_Ejercito_de_Colombia.png" width="270px" height="300px">
+</div>
+
+<div class="flotante_derecho">
+
+  <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+
+    <mat-tab label="BIENVENIDA">
+      <div style="width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h5 style="margin: 4% 0 0 28%; font-weight: bold">ESTUDIO DE SEGURIDAD PERSONAL INGRESO</h5> <!-- Creación Título "Nombre Completo" -->
+        <h5 style="margin-left: 45%; font-weight: bold">NR-1</h5>
+        <div>
+          <div style="width: 700px; height: 250px; margin: 5% 0 0 2%; float: left;">
+            <label style="margin: 2% 0 0 2%; font-weight: bold">INSTRUCCIONES:</label>
+            <label style="margin: 3% 0 0 4%;">- Este formato debe diligenciarse en su totalidad de forma clara por el aspirante.</label>
+            <label style="margin: 2% 0 0 4%;">- Una vez diligenciado y enviado, la información contenida en este formato estará amparada
+                                                BAJO RESERVA LEGAL y tendrá el nivel de seguridad RESTRINGIDO.</label>
+          </div>
+
+          <div style="width: 200px; height: 250px; border-radius: 20px; border-style: solid; margin: 5% 0 0 10%; float: left;">
+            <label style="margin: 20% 0 0 20%">Foto Aspirante</label>
+            <button mat-mini-fab color="primary" style="margin: 20% 0 0 40%">+</button>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="I. DATOS PERSONALES"> <!-- TAB DATOS PERSONALES -->
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+          <h5 style="margin: 4% 0 0 4%; font-weight: bold">Nombre Completo</h5> <!-- Creación Título "Nombre Completo" -->
+
+          <div style="margin: 3% 0 0 11%">
+            <label for="pApellido" class="inp">
+              <input type="text" id="pApellido" placeholder="&nbsp;">
+              <span class="label">Primer Apellido</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="sApellido" class="inp" style="margin-left: 10px">
+              <input type="text" id="sApellido" placeholder="&nbsp;">
+              <span class="label">Segundo Apellido</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="pNombre" class="inp" style="margin-left: 10px">
+              <input type="text" id="pNombre" placeholder="&nbsp;">
+              <span class="label">Primer Nombre</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="sNombre" class="inp" style="margin-left: 10px">
+              <input type="text" id="sNombre" placeholder="&nbsp;">
+              <span class="label">Segundo Nombre</span>
+              <span class="border"></span>
+            </label>
+          </div>
+
+          <div>
+            <h5 style="margin: 4% 0 0 4%; font-weight: bold">Documento de Identidad</h5>
+
+            <mat-form-field class="inp" style="margin: 3% 0 0 10%;">
+              <mat-select placeholder="Tipo">
+                <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                  {{tipodocumento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="nDocumento" class="inp" style="margin-left: 2%">
+              <input type="text" id="nDocumento" placeholder="&nbsp;">
+              <span class="label">Número</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="fExpedicion" class="inp" style="margin-left: 2%">
+              <input type="date" id="fExpedicion" placeholder="&nbsp;">
+              <span class="label">Fecha de Expedición</span>
+              <span class="border"></span>
+            </label>
+
+            <mat-form-field style="margin-left: 2%">
+              <mat-select placeholder="País de Expedición">
+                <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                  {{pais.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin: 2% 0 0 10%;">
+              <mat-select placeholder="Dept de Expedición">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 10px">
+              <mat-select placeholder="Ciudad de Expedición">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <h5 style="margin: 4% 0 0 4%; font-weight: bold">Pasaporte</h5>
+
+            <label for="nPasaporte" class="inp" style="margin: 3% 0 0 11%;">
+              <input type="text" id="nPasaporte" placeholder="&nbsp;">
+              <span class="label">Número</span>
+              <span class="border"></span>
+            </label>
+
+            <mat-form-field style="margin-left: 10%;">
+              <mat-select placeholder="Dept de Expedición">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 10%">
+              <mat-select placeholder="Ciudad de Expedición">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <h5 style="margin: 4% 0 0 4%; font-weight: bold">Libreta Militar</h5>
+
+            <label for="nLMAspirante" class="inp" style="margin: 3% 0% 0% 11%;">
+              <input type="text" id="nLMAspirante" placeholder="&nbsp;">
+              <span class="label">Número</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="cLMAspirante" class="inp" style="margin: 3% 0% 0% 11%;">
+              <input type="text" id="cLMAspirante" placeholder="&nbsp;">
+              <span class="label">Clase</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="fELMAspirante" class="inp" style="margin: 3% 0% 0% 11%;">
+              <input type="date" id="fELMAspirante" placeholder="&nbsp;">
+              <span class="label">Fecha Expedición</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="dLMilitar" class="inp" style="margin: 2% 0 0 11%;">
+              <input type="text" id="dLMilitar" placeholder="&nbsp;">
+              <span class="label">Distrito</span>
+              <span class="border"></span>
+            </label>
+          </div>
+
+          <div>
+            <h5 style="margin: 4% 0 0 4%; font-weight: bold">Nacimiento</h5>
+
+            <mat-form-field style="margin: 3% 0 0 11%;">
+              <mat-select placeholder="País">
+                <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                  {{pais.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Departamento">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Ciudad">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="fNacimiento" class="inp" style="margin-left: 3%;">
+              <input type="date" id="fNacimiento" placeholder="&nbsp;">
+              <span class="label">Fecha</span>
+              <span class="border"></span>
+            </label>
+          </div>
+
+          <div>
+            <h5 style="margin: 4% 0 0 4%; font-weight: bold">Residencia</h5>
+            <br>
+            <h6 style="margin-left: 10%; font-weight: bold">Actual:</h6>
+
+            <label for="dAspirante" class="inp" style="margin: 1% 0 0 15%;">
+              <input type="text" id="dAspirante" placeholder="&nbsp;">
+              <span class="label">Dirección</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="nTCAspirante" class="inp" style="margin-left: 2%;">
+              <input type="text" id="nTCAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Celular</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="nTFAspirante" class="inp" style="margin-left: 2%;">
+              <input type="text" id="nTFAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Teléfono Fijo</span>
+              <span class="border"></span>
+            </label>
+
+            <mat-form-field style="margin: 3% 0 0 15%;">
+              <mat-select placeholder="País">
+                <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                  {{pais.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Departamento">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Ciudad">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <br>
+            <h6 style="margin: 2% 0 0 10%; font-weight: bold">Anterior:</h6>
+
+            <label for="dAAspirante" class="inp" style="margin: 1% 0% 0% 15%;">
+              <input type="text" id="dAAspirante" placeholder="&nbsp;">
+              <span class="label">Dirección</span>
+              <span class="border"></span>
+            </label>
+
+            <mat-form-field style="margin: 3% 0 0 3%;">
+              <mat-select placeholder="País">
+                <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                  {{pais.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Departamento">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Ciudad">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="nTRAspirante" class="inp" style="margin-left: 15%;">
+              <input type="text" id="nTRAspirante" placeholder="&nbsp;">
+              <span class="label">Número Teléfono</span>
+              <span class="border"></span>
+            </label>
+          </div>
+
+          <div>
+            <h5 style="margin: 4% 0 0 4%; font-weight: bold">Información Adicional</h5>
+
+            <mat-form-field style="margin: 3% 0 0 10%;">
+              <mat-select placeholder="Estado Civil">
+                <mat-option *ngFor="let estadocivil of estadosciviles" [value]="estadocivil.value">
+                  {{estadocivil.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 3%;">
+              <mat-select placeholder="Grupo Sanguineo">
+                <mat-option *ngFor="let gruposanguineo of grupossanguineos" [value]="gruposanguineo.value">
+                  {{gruposanguineo.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="puOficioA" class="inp" style="margin-left: 3%;">
+              <input type="text" id="puOficioA" placeholder="&nbsp;">
+              <span class="label">Profesión u Oficio</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="tProfesionalA" class="inp" style="margin-left: 3%;">
+              <input type="text" id="tProfesionalA" placeholder="&nbsp;">
+              <span class="label">Número Tarjeta Profesional</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="estaturaA" class="inp" style="margin: 2% 0% 0% 10%;">
+              <input type="text" id="estaturaA" placeholder="&nbsp;">
+              <span class="label">Estatura (cm)</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="pesoA" class="inp" style="margin-left: 3%;">
+              <input type="text" id="pesoA" placeholder="&nbsp;">
+              <span class="label">Peso (Kg)</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="cEelecAspirante" class="inp" style="margin-left: 3%;">
+              <input type="text" id="cEelecAspirante" placeholder="&nbsp;">
+              <span class="label">Correo Electrónico</span>
+              <span class="border"></span>
+            </label>
+
+            <h6 style="margin: 4% 0 0 10%; font-weight: bold">Redes Sociales:</h6> <!-- RED SOCIAL -->
+
+            <button mat-mini-fab color="primary" (click)="agregarRedSocial()" [disabled]="arrayRedSocial.length === 5" style="margin-left: 50%">+</button>
+            <button mat-mini-fab color="primary" (click)="quitarRedSocial()" [disabled]="arrayRedSocial.length === 1">-</button>
+
+            <div class="p-grid" style="margin-left: 15%; margin-bottom: 3%">
+              <div class="p-col" *ngFor="let col of arrayRedSocial; let i=index"> <!--[@animation]="'visible'"-->
+                <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                  <span>
+                    <label for="rSocialesA" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="rSocialesA" placeholder="&nbsp;">
+                      <span class="label">RED Social</span>
+                      <span class="border"></span>
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div> <!-- END RED SOCIAL -->
+          </div>
+      </div>
+    </mat-tab> <!-- END TAB DATOS PERSONALES -->
+
+
+
+
+    <mat-tab label="II. DATOS FAMILIARES"> <!-- TAB DATOS FAMILIARES -->
+
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h5 style="margin: 4% 0 0 4%; font-weight: bold">Información Compañera(o) Sentimental</h5> <!-- Creación Título "Nombre Completo" -->
+
+        <div style="margin: 3% 0 0 11%">
+          <label for="pACSentimental" class="inp">
+            <input type="text" id="pACSentimental" placeholder="&nbsp;">
+            <span class="label">Primer Apellido</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="sACSentimental" class="inp" style="margin-left: 10px">
+            <input type="text" id="sACSentimental" placeholder="&nbsp;">
+            <span class="label">Segundo Apellido</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="pNCSentimental" class="inp" style="margin-left: 10px">
+            <input type="text" id="pNCSentimental" placeholder="&nbsp;">
+            <span class="label">Primer Nombre</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="sNCSentimental" class="inp" style="margin-left: 10px">
+            <input type="text" id="sNCSentimental" placeholder="&nbsp;">
+            <span class="label">Segundo Nombre</span>
+            <span class="border"></span>
+          </label>
+
+          <mat-form-field style="margin: 2% 0 0 0">
+            <mat-select placeholder="Tipo de Documento">
+              <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                {{tipodocumento.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <label for="nDCSentimental" class="inp" style="margin-left: 3%">
+            <input type="text" id="nDCSentimental" placeholder="&nbsp;">
+            <span class="label">Número de Documento</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="pUOCSentimental" class="inp" style="margin-left: 2%;">
+            <input type="text" id="pUOCSentimental" placeholder="&nbsp;">
+            <span class="label">Profesión u Oficio</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="dCSentimental" class="inp" style="margin-left: 2%;">
+            <input type="text" id="dCSentimental" placeholder="&nbsp;">
+            <span class="label">Dirección</span>
+            <span class="border"></span>
+          </label>
+
+          <mat-form-field>
+            <mat-select placeholder="Departamento">
+              <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                {{departamento.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 3%;">
+            <mat-select placeholder="Ciudad">
+              <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                {{ciudad.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <label for="nCCSentimental" class="inp" style="margin: 2% 0 0 2%;">
+            <input type="text" id="nCCSentimental" placeholder="&nbsp;">
+            <span class="label">Número de Celular</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="nTCSentimental" class="inp" style="margin-left: 2%;">
+            <input type="text" id="nTCSentimental" placeholder="&nbsp;">
+            <span class="label">Número de Teléfono</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="cECSentimental" class="inp">
+            <input type="email" id="cECSentimental" placeholder="&nbsp;">
+            <span class="label">Correo Electrónico</span>
+            <span class="border"></span>
+          </label>
+
+          <h6 style="margin: 4% 0 0 0; font-weight: bold">Redes Sociales Compañero(a) Sentimental:</h6> <!-- RED SOCIAL COMPAÑERA SENTIMENTAL-->
+
+          <button mat-mini-fab color="primary" (click)="agregarRSConyugue()" [disabled]="arrayRSConguye.length === 5" style="margin-left: 40%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarRSConyugue()" [disabled]="arrayRSConguye.length === 1">-</button>
+
+          <div class="p-grid" style="margin-left: 5%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayRSConguye; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; font-size: 20px; margin-top: 2%">{{i + 1}}
+                <span>
+                    <label for="rSCSentimental" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="rSCSentimental" placeholder="&nbsp;">
+                      <span class="label">RED Social</span>
+                      <span class="border"></span>
+                    </label>
+                  </span>
+              </div>
+            </div>
+          </div> <!-- END RED SOCIAL COMPAÑERA SENTIMENTAL-->
+        </div> <!-- END COMPAÑERA SENTIMENTAL-->
+
+        <div><!-- DIV HIJOS -->
+          <h5 style="margin: 6% 0 0 4%; font-weight: bold">Información Hijos</h5> <!-- Creación Título "Hijos" -->
+
+          <button mat-mini-fab color="primary" (click)="agregarHijo()" [disabled]="arrayNHijos.length === 5" style="margin-left: 50%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarHijo()" [disabled]="arrayNHijos.length === 1" style="margin-bottom: 2%">-</button>
+
+          <div class="p-grid" style="margin-left: 9%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayNHijos; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                <span>
+                    <label for="hAPApellido" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="hAPApellido" placeholder="&nbsp;">
+                      <span class="label">Primer Apellido</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="hASApellido" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="hASApellido" placeholder="&nbsp;">
+                      <span class="label">Segundo Apellido</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="hAPNombre" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="hAPNombre" placeholder="&nbsp;">
+                      <span class="label">Primer Nombre</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="hASNombre" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="hASNombre" placeholder="&nbsp;">
+                      <span class="label">Segundo Nombre</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <mat-form-field style="margin: 2% 0 0 4%;">
+                      <mat-select placeholder="Tipo de Documento">
+                        <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                          {{tipodocumento.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                      <label for="nDHAspirante" class="inp" style="margin-left: 4%">
+                        <input type="text" id="nDHAspirante" placeholder="&nbsp;">
+                        <span class="label">Número de Documento</span>
+                        <span class="border"></span>
+                      </label>
+                  </span>
+              </div>
+            </div>
+          </div> <!-- END NÚMERO HIJOS-->
+        </div> <!-- END DIV HIJOS -->
+
+        <div> <!-- DIV PADRES -->
+          <h5 style="margin: 6% 0 0 4%; font-weight: bold">Información Padres</h5> <!-- Creación Título "Hijos" -->
+          <h6 style="margin: 4% 0 0 10%; font-weight: bold">Padre:</h6>
+
+          <div style="margin: 2% 0 0 12%">
+
+            <label for="pAPApellido" class="inp">
+              <input type="text" id="pAPApellido" placeholder="&nbsp;">
+              <span class="label">Primer Apellido</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="pASApellido" class="inp" style="margin-left: 2%;">
+              <input type="text" id="pASApellido" placeholder="&nbsp;">
+              <span class="label">Segundo Apellido</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="pAPNombre" class="inp" style="margin-left: 2%;">
+              <input type="text" id="pAPNombre" placeholder="&nbsp;">
+              <span class="label">Primer Nombre</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="pASNombre" class="inp" style="margin-left: 2%;">
+              <input type="text" id="pASNombre" placeholder="&nbsp;">
+              <span class="label">Segundo Nombre</span>
+              <span class="border"></span>
+            </label>
+
+            <br>
+
+            <label style="margin: 4% 0 0 0;">¿Vive?</label>
+
+            <mat-radio-group style="margin: 10% 0 0 5%">
+              <mat-radio-button value="1">Sí</mat-radio-button>
+              <mat-radio-button value="2" style="margin-left: 2%">No</mat-radio-button>
+            </mat-radio-group>
+
+            <br>
+
+            <mat-form-field style="margin-top: 2%;">
+              <mat-select placeholder="Tipo de Documento">
+                <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                  {{tipodocumento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="nDPAspirante" class="inp" style="margin-left: 3%">
+              <input type="text" id="nDPAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Documento</span>
+              <span class="border"></span>
+            </label>
+
+            <br>
+
+            <label for="dPAspirante" class="inp" style="margin-right: 3%; margin-top: 2%">
+              <input type="text" id="dPAspirante" placeholder="&nbsp;">
+              <span class="label">Dirección</span>
+              <span class="border"></span>
+            </label>
+
+            <mat-form-field>
+              <mat-select placeholder="Departamento">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 4%;">
+              <mat-select placeholder="Ciudad">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="nCPAspirante" class="inp" style="margin-left: 3%">
+              <input type="text" id="nCPAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Celular</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="nTPAspirante" class="inp" style="margin-top: 2%">
+              <input type="text" id="nTPAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Teléfono</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="oPAspirante" class="inp" style="margin-left: 3%">
+              <input type="text" id="oPAspirante" placeholder="&nbsp;">
+              <span class="label">Ocupación</span>
+              <span class="border"></span>
+            </label>
+          </div>
+
+          <h6 style="margin: 4% 0 0 10%; font-weight: bold">Madre:</h6>
+
+          <div style="margin: 2% 0 0 12%">
+
+            <label for="mAPApellido" class="inp">
+              <input type="text" id="mAPApellido" placeholder="&nbsp;">
+              <span class="label">Primer Apellido</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="mASApellido" class="inp" style="margin-left: 2%;">
+              <input type="text" id="mASApellido" placeholder="&nbsp;">
+              <span class="label">Segundo Apellido</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="mAPNombre" class="inp" style="margin-left: 2%;">
+              <input type="text" id="mAPNombre" placeholder="&nbsp;">
+              <span class="label">Primer Nombre</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="mASNombre" class="inp" style="margin-left: 2%;">
+              <input type="text" id="mASNombre" placeholder="&nbsp;">
+              <span class="label">Segundo Nombre</span>
+              <span class="border"></span>
+            </label>
+
+            <br>
+
+            <label style="margin: 4% 0 0 0">¿Vive?</label>
+
+            <mat-radio-group style="margin: 10% 0 0 5%">
+              <mat-radio-button value="1">Sí</mat-radio-button>
+              <mat-radio-button value="2" style="margin-left: 2%">No</mat-radio-button>
+            </mat-radio-group>
+
+            <br>
+
+            <mat-form-field style="margin-top: 2%;">
+              <mat-select placeholder="Tipo de Documento">
+                <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                  {{tipodocumento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="nDMAspirante" class="inp" style="margin-left: 3%">
+              <input type="text" id="nDMAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Documento</span>
+              <span class="border"></span>
+            </label>
+
+            <br>
+
+            <label for="dMAspirante" class="inp" style="margin-right: 3%; margin-top: 2%">
+              <input type="text" id="dMAspirante" placeholder="&nbsp;">
+              <span class="label">Dirección</span>
+              <span class="border"></span>
+            </label>
+
+            <mat-form-field>
+              <mat-select placeholder="Departamento">
+                <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                  {{departamento.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-left: 4%;">
+              <mat-select placeholder="Ciudad">
+                <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                  {{ciudad.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <label for="nCMAspirante" class="inp" style="margin-left: 3%">
+              <input type="text" id="nCMAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Celular</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="nTMAspirante" class="inp" style="margin-top: 2%">
+              <input type="text" id="nTMAspirante" placeholder="&nbsp;">
+              <span class="label">Número de Teléfono</span>
+              <span class="border"></span>
+            </label>
+
+            <label for="oMAspirante" class="inp" style="margin-left: 3%">
+              <input type="text" id="oMAspirante" placeholder="&nbsp;">
+              <span class="label">Ocupación</span>
+              <span class="border"></span>
+            </label>
+          </div>
+        </div><!-- END DIV PADRES -->
+
+        <div><!-- DIV HERMANOS -->
+          <h5 style="margin: 6% 0 0 4%; font-weight: bold">Información Hermanos</h5> <!-- Creación Título "Hermanos" -->
+
+          <button mat-mini-fab color="primary" (click)="agregarHermano()" [disabled]="arrayNHermanos.length === 5" style="margin-left: 50%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarHermano()" [disabled]="arrayNHermanos.length === 1" style="margin-bottom: 2%">-</button>
+
+          <div class="p-grid" style="margin-left: 9%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayNHermanos; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; margin-top: 2%; margin-right: 4%">{{i + 1}}
+                <span>
+                  <label for="hermanoAPApellido" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="hermanoAPApellido" placeholder="&nbsp;">
+                    <span class="label">Primer Apellido</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="hermanoASApellido" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="hermanoASApellido" placeholder="&nbsp;">
+                    <span class="label">Segundo Apellido</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="hermanoAPNombre" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="hermanoAPNombre" placeholder="&nbsp;">
+                    <span class="label">Primer Nombre</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="hermanoASNombre" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="hermanoASNombre" placeholder="&nbsp;">
+                    <span class="label">Segundo Nombre</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <mat-form-field style="margin: 2% 0 0 4%;">
+                    <mat-select placeholder="Tipo de Documento">
+                      <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                        {{tipodocumento.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <label for="nDHermanoAspirante" class="inp" style="margin-left: 4%">
+                    <input type="text" id="nDHermanoAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Documento</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <br>
+
+                  <label for="dHAspirante" class="inp" style="margin: 0 3% 0 3%">
+                    <input type="text" id="dHAspirante" placeholder="&nbsp;">
+                    <span class="label">Dirección</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <mat-form-field>
+                    <mat-select placeholder="Departamento" style="margin-left: 2%">
+                      <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                        {{departamento.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field style="margin-left: 3%;">
+                    <mat-select placeholder="Ciudad">
+                      <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                        {{ciudad.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <label for="nCHAspirante" class="inp" style="margin-left: 3%">
+                    <input type="text" id="nCHAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Celular</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nTHAspirante" class="inp" style="margin: 2% 0 0 3%">
+                    <input type="text" id="nTHAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Teléfono</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="oHAspirante" class="inp" style="margin-left: 3%">
+                    <input type="text" id="oHAspirante" placeholder="&nbsp;">
+                    <span class="label">Ocupación</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <h6 style="margin: 4% 0 0 12%; font-weight: bold">Redes Sociales Hermano:</h6> <!-- RED SOCIAL HERMANO-->
+
+                  <button mat-mini-fab color="primary" (click)="agregarRSHermano()" [disabled]="arrayRSHermano.length === 5" style="margin-left: 40%">+</button>
+                  <button mat-mini-fab color="primary" (click)="quitarRSHermano()" [disabled]="arrayRSHermano.length === 1">-</button>
+
+                  <div class="p-grid" style="margin-left: 12%; margin-bottom: 3%">
+                    <div class="p-col" *ngFor="let col of arrayRSHermano; let i=index"> <!--[@animation]="'visible'"-->
+                      <div style="font-weight: bold; font-size: 20px; margin-top: 2%">{{i + 1}}
+                        <span>
+                            <label for="rSHAspirante" class="inp" style="margin-left: 2%;">
+                              <input type="text" id="rSHAspirante" placeholder="&nbsp;">
+                              <span class="label">RED Social</span>
+                              <span class="border"></span>
+                            </label>
+                          </span>
+                      </div>
+                    </div>
+                  </div> <!-- END RED SOCIAL HERMANO-->
+                  <hr>
+                </span>
+              </div>
+            </div>
+          </div> <!-- END NÚMERO HERMANOS-->
+        </div> <!-- DIV HERMANOS -->
+      </div> <!-- END DIV INTERNO -->
+    </mat-tab> <!-- END TAB DATOS FAMILIARES -->
+
+
+
+
+    <mat-tab label="III. INFORMACIÓN ACADÉMICA"> <!-- TAB INFORMACIÓN ACADÉMICA -->
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h5 style="margin: 4% 0% 0% 4%; font-weight: bold">Estudios Realizados</h5> <!-- Creación Título "Estudios Realizados" -->
+        <div style="margin: 0 3% 0 3%">
+          <button mat-mini-fab color="primary" (click)="agregarEstudioAspirante()" [disabled]="arrayEstudioAspirante.length === 6" style="margin-left: 40%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarEstudioAspirante()" [disabled]="arrayEstudioAspirante.length === 1">-</button>
+
+          <div class="p-grid" style="margin-left: 2%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayEstudioAspirante; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                <span>
+                  <label for="eRAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="eRAspirante" placeholder="&nbsp;">
+                    <span class="label">Estudio Realizado</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="aFERAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="aFERAspirante" placeholder="&nbsp;">
+                    <span class="label">Año Finalización</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="tOAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="tOAspirante" placeholder="&nbsp;">
+                    <span class="label">Título Obtenido</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nIAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="nIAspirante" placeholder="&nbsp;">
+                    <span class="label">Nombre Institución</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <mat-form-field style="margin-left: 4%">
+                    <mat-select placeholder="País">
+                      <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                        {{pais.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field style="margin: 2% 0 0 3%;">
+                    <mat-select placeholder="Dep o Estado">
+                      <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                        {{departamento.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field style="margin-left: 3%">
+                    <mat-select placeholder="Ciudad">
+                      <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                        {{ciudad.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <hr>
+                </span>
+              </div>
+            </div>
+          </div> <!-- END ESTUDIOS REALIZADOS-->
+
+          <h5 style="margin: 4% 0 0 0; font-weight: bold">Idiomas Extrajeros que Domina</h5> <!-- Creación Título "Idiomas Extranjeros" -->
+          <div style="margin: 0 3% 0 3%">
+            <button mat-mini-fab color="primary" (click)="agregarIdiomaAspirante()" [disabled]="arrayIdiomaAspirante.length === 6" style="margin-left: 40%">+</button>
+            <button mat-mini-fab color="primary" (click)="quitarIdiomaAspirante()" [disabled]="arrayIdiomaAspirante.length === 1">-</button>
+
+            <div class="p-grid" style="margin-left: 2%; margin-bottom: 3%">
+              <div class="p-col" *ngFor="let col of arrayIdiomaAspirante; let i=index"> <!--[@animation]="'visible'"-->
+                <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                  <span>
+                  <label for="iEAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="iEAspirante" placeholder="&nbsp;">
+                    <span class="label">Idioma</span>
+                    <span class="border"></span>
+                  </label>
+                </span>
+                </div>
+              </div>
+            </div> <!-- END IDIOMA ASPIRANTE-->
+          </div>
+        </div>
+      </div><!-- END DIV INTERNO -->
+    </mat-tab> <!-- END TAB INFORMACIÓN ACADÉMICA -->
+
+
+
+    <mat-tab label="IV. EXPERIENCIA LABORAL">
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h5 style="margin: 4% 0% 0% 4%; font-weight: bold">Datos Empresa</h5> <!-- Creación Título "Datos Empresa" -->
+
+        <div style="margin: 0 3% 0 3%">
+
+          <button mat-mini-fab color="primary" (click)="agregarEmpresaAspirante()" [disabled]="arrayEmpresaAspirante.length === 6" style="margin-left: 50%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarEmpresaAspirante()" [disabled]="arrayEmpresaAspirante.length === 1">-</button>
+
+          <div class="p-grid" style="margin-left: 2%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayEmpresaAspirante; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                <span>
+                  <label for="nEAspirante" class="inp" style="margin-left: 2%; margin-top: 3%;">
+                    <input type="text" id="nEAspirante" placeholder="&nbsp;">
+                    <span class="label">Nombre</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="dEAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="dEAspirante" placeholder="&nbsp;">
+                    <span class="label">Dirección</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="cEAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="cEAspirante" placeholder="&nbsp;">
+                    <span class="label">Cargo</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="tEAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="number" id="tEAspirante" placeholder="&nbsp;">
+                    <span class="label">Tiempo(Meses)</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nCEAspirante" class="inp" style="margin: 2% 0 0 3%;">
+                    <input type="text" id="nCEAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Celular</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nTEAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="nTEAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Teléfono</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="sEAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="sEAspirante" placeholder="&nbsp;">
+                    <span class="label">Sueldo</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="mREAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="mREAspirante" placeholder="&nbsp;">
+                    <span class="label">Motivo Retiro</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nJEAspirante" class="inp" style="margin: 2% 0 0 3%;">
+                    <input type="text" id="nJEAspirante" placeholder="&nbsp;">
+                    <span class="label">Nombre Jefe Inmediato</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="dPWEAspirante" class="inp" style="margin-left: 2%; margin-bottom: 3%">
+                    <input type="text" id="dPWEAspirante" placeholder="&nbsp;">
+                    <span class="label">Dirección Página WEB</span>
+                    <span class="border"></span>
+                  </label>
+                  <hr>
+                </span>
+              </div>
+            </div>
+          </div> <!-- END DATOS EMPRESA -->
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="V. REFERENCIAS PERSONALES">
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h5 style="margin: 4% 0 0 4%; font-weight: bold">Referencias (No Familiares):</h5> <!-- Referencias (No Familiares)" -->
+          <div>
+            <button mat-mini-fab color="primary" (click)="agregarReferenciaPersonal()" [disabled]="arrayReferenciaPersonal.length === 6" style="margin-left: 50%">+</button>
+            <button mat-mini-fab color="primary" (click)="quitarReferenciaPersonal()" [disabled]="arrayReferenciaPersonal.length === 1">-</button>
+
+            <div class="p-grid" style="margin: 2% 3% 3% 4%;">
+              <div class="p-col" *ngFor="let col of arrayReferenciaPersonal; let i=index">
+                <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                  <span>
+                    <label for="pNRPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="pNRPAspirante" placeholder="&nbsp;">
+                      <span class="label">Primer Apellido</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="sNRPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="sNRPAspirante" placeholder="&nbsp;">
+                      <span class="label">Segundo Apellido</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="pARPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="pARPAspirante" placeholder="&nbsp;">
+                      <span class="label">Primer Nombre</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="sARPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="sARPAspirante" placeholder="&nbsp;">
+                      <span class="label">Segundo Nombre</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <mat-form-field style="margin: 3% 0 0 4%;">
+                      <mat-select placeholder="Tipo Documento">
+                        <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                          {{tipodocumento.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <label for="nDRPAspirante" class="inp" style="margin-left: 5%">
+                      <input type="text" id="nDRPAspirante" placeholder="&nbsp;">
+                      <span class="label">Número de Documento</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="pUORPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="pUORPAspirante" placeholder="&nbsp;">
+                      <span class="label">Profesión u Oficio</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="dRPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="dRPAspirante" placeholder="&nbsp;">
+                      <span class="label">Dirección</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <mat-form-field style="margin: 2% 0 0 4%">
+                      <mat-select placeholder="Departamento">
+                        <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                          {{departamento.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field style="margin-left: 3%;">
+                      <mat-select placeholder="Ciudad">
+                        <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                          {{ciudad.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <label for="nCRPAspirante" class="inp" style="margin-left: 3%">
+                      <input type="text" id="nCRPAspirante" placeholder="&nbsp;">
+                      <span class="label">Número de Celular</span>
+                      <span class="border"></span>
+                    </label>
+
+                    <label for="nTRPAspirante" class="inp" style="margin-left: 2%;">
+                      <input type="text" id="nTRPAspirante" placeholder="&nbsp;">
+                      <span class="label">Número de Teléfono</span>
+                      <span class="border"></span>
+                    </label>
+                  <hr>
+                </span>
+              </div>
+            </div>
+          </div> <!-- END REFERENCIAS PERSONALES -->
+        </div>
+
+        <h5 style="margin: 7% 0 0 4%; font-weight: bold">Parientes o Amigos que Trabajen en los Organismos de Seguridad del Estado o Entidades Públicas:</h5> <!-- Creación Título "Parientes" -->
+        <div style="margin: 3% 0 0 3%">
+          <button mat-mini-fab color="primary" (click)="agregarReferenciaMilitar()" [disabled]="arrayReferenciaMilitar.length === 6" style="margin-left: 49%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarReferenciaMilitar()" [disabled]="arrayReferenciaMilitar.length === 1">-</button>
+
+          <div class="p-grid" style="margin: 2% 3% 3% 4%;">
+            <div class="p-col" *ngFor="let col of arrayReferenciaMilitar; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                <span>
+                  <label for="pNRMAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="pNRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Primer Apellido</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="sNRMAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="sNRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Segundo Apellido</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="pARMAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="pARMAspirante" placeholder="&nbsp;">
+                    <span class="label">Primer Nombre</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="sARMAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="sARMAspirante" placeholder="&nbsp;">
+                    <span class="label">Segundo Nombre</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <mat-form-field style="margin: 1% 0 0 3%;">
+                    <mat-select placeholder="Tipo Documento">
+                      <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
+                        {{tipodocumento.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <label for="nDRMAspirante" class="inp" style="margin-left: 3%">
+                    <input type="text" id="nDRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Documento</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="gRMAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="gRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Grado</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="dRMAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="dRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Dirección</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <mat-form-field style="margin: 0 0 0 3%;">
+                    <mat-select placeholder="Departamento">
+                      <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
+                        {{departamento.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field style="margin-left: 4%;">
+                    <mat-select placeholder="Ciudad">
+                      <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
+                        {{ciudad.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <label for="oRMAspirante" class="inp" style="margin-left: 4%;">
+                    <input type="text" id="oRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Organismo/Entidad</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nCRMAspirante" class="inp" style="margin-left: 3%">
+                    <input type="text" id="nCRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Celular</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="nTRMAspirante" class="inp" style="margin-left: 3%;">
+                    <input type="text" id="nTRMAspirante" placeholder="&nbsp;">
+                    <span class="label">Número de Teléfono</span>
+                    <span class="border"></span>
+                  </label>
+                  <hr>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="VI. BIENES Y RENTAS">
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h5 style="margin: 4% 0 0 4%; font-weight: bold">Los Ingresos y Rentas que Obtuve en en el Último Año Fueron</h5> <!-- Imgresos -->
+        <div style="margin: 3% 0 0 3%">
+          <label for="sIAspirante" class="inp" style="margin-left: 3%">
+            <input type="number" id="sIAspirante" placeholder="&nbsp;">
+            <span class="label">Salarios, Ingresos Laborales</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="cIAspirante" class="inp" style="margin-left: 3%">
+            <input type="number" id="cIAspirante" placeholder="&nbsp;">
+            <span class="label">Cesantías, Intereses</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="aIAspirante" class="inp" style="margin-left: 3%">
+            <input type="number" id="aIAspirante" placeholder="&nbsp;">
+            <span class="label">Arriendos</span>
+            <span class="border"></span>
+          </label>
+
+          <label for="hIAspirante" class="inp" style="margin-left: 3%">
+            <input type="number" id="hIAspirante" placeholder="&nbsp;">
+            <span class="label">Honorarios</span>
+            <span class="border"></span>
+          </label>
+
+          <h6 style="margin: 4% 0 0 6%; font-weight: bold">Otros Ingresos:</h6> <!-- RED SOCIAL HERMANO-->
+
+          <button mat-mini-fab color="primary" (click)="agregarOtrosIngresos()" [disabled]="arrayOtroIngreso.length === 5" style="margin-left: 40%">+</button>
+          <button mat-mini-fab color="primary" (click)="quitarOtrosIngresos()" [disabled]="arrayOtroIngreso.length === 1">-</button>
+
+          <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayOtroIngreso; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; font-size: 20px; margin-top: 2%">{{i + 1}}
+                <span>
+                  <label for="cOIAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="cOIAspirante" placeholder="&nbsp;">
+                    <span class="label">Concepto</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="vOIAspirante" class="inp" style="margin-left: 2%;">
+                    <input type="text" id="vOIAspirante" placeholder="&nbsp;">
+                    <span class="label">Valor</span>
+                    <span class="border"></span>
+                  </label>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h5 style="margin: 10% 0 0 4%; font-weight: bold">Las Cuentas Corrientes y de Ahorro que Poseo en Colombia y/o en el Exterior son</h5> <!-- Imgresos -->
+
+        <button mat-mini-fab color="primary" (click)="agregarCuenta()" [disabled]="arrayCuentas.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarCuenta()" [disabled]="arrayCuentas.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayCuentas; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+
+                <mat-form-field style="margin-left: 4%;">
+                 <mat-select placeholder="País">
+                   <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                     {{pais.viewValue}}
+                  </mat-option>
+                 </mat-select>
+                </mat-form-field>
+
+                <label for="eFAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="eFAspirante" placeholder="&nbsp;">
+                  <span class="label">Entidad Financiera</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="sedeCAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="sedeCAspirante" placeholder="&nbsp;">
+                  <span class="label">Sede de la Cuenta</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="tCAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="tCAspirante" placeholder="&nbsp;">
+                  <span class="label">Tipo de Cuenta</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="nCAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="number" id="nCAspirante" placeholder="&nbsp;">
+                  <span class="label">Número de Cuenta</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="saldoCAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="number" id="saldoCAspirante" placeholder="&nbsp;">
+                  <span class="label">Número de Cuenta</span>
+                  <span class="border"></span>
+                </label>
+
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h5 style="margin: 10% 0 0 4%; font-weight: bold">Bienes Patrimoniales</h5> <!-- Bienes Patrimoniales -->
+
+        <button mat-mini-fab color="primary" (click)="agregarBien()" [disabled]="arrayBienPatrimonial.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarBien()" [disabled]="arrayBienPatrimonial.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayBienPatrimonial; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+
+                <label for="tBAspirante" class="inp" style="margin: 1% 0 0 2%;">
+                  <input type="text" id="tBAspirante" placeholder="&nbsp;">
+                  <span class="label">Tipo Bien</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="iBAspirante" class="inp" style="margin-left: 10%;">
+                  <input type="text" id="iBAspirante" placeholder="&nbsp;">
+                  <span class="label">Identificación del Bien</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="vBAspirante" class="inp" style="margin-left: 10%;">
+                  <input type="text" id="vBAspirante" placeholder="&nbsp;">
+                  <span class="label">Valor</span>
+                  <span class="border"></span>
+                </label>
+
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h5 style="margin: 10% 0 0 4%; font-weight: bold">Obligaciones Crediticias</h5> <!-- Obligaciones Crediticias -->
+
+        <button mat-mini-fab color="primary" (click)="agregarObligacion()" [disabled]="arrayObligacionCrediticia.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarObligacion()" [disabled]="arrayObligacionCrediticia.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayObligacionCrediticia; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+                <label for="eOCAspirante" class="inp" style="margin: 1% 0 0 2%;">
+                  <input type="text" id="eOCAspirante" placeholder="&nbsp;">
+                  <span class="label">Entidad </span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="vOCAspirante" class="inp" style="margin-left: 10%;">
+                  <input type="number" id="vOCAspirante" placeholder="&nbsp;">
+                  <span class="label">Valor</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="cOCBAspirante" class="inp" style="margin-left: 10%;">
+                  <input type="text" id="cOCBAspirante" placeholder="&nbsp;">
+                  <span class="label">Concepto</span>
+                  <span class="border"></span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h5 style="margin: 10% 0 0 4%; font-weight: bold">Participación en organizaciones, corporaciones, sociedades, asociaciones, ONG´s u otros:</h5>
+        <h5 style="margin: 0 0 0 4%; font-weight: bold">En la actualidad participo como miembro de las siguientes organizaciones:</h5> <!-- ONG's -->
+
+        <button mat-mini-fab color="primary" (click)="agregarONG()" [disabled]="arrayONG.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarONG()" [disabled]="arrayONG.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayONG; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+                <label for="nONGAspirante" class="inp" style="margin: 1% 0 0 2%;">
+                  <input type="text" id="nONGAspirante" placeholder="&nbsp;">
+                  <span class="label">Nombre Organización</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="cMONGAspirante" class="inp" style="margin-left: 10%;">
+                  <input type="text" id="cMONGAspirante" placeholder="&nbsp;">
+                  <span class="label">Calidad de Miembro</span>
+                  <span class="border"></span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+        <h5 style="margin: 10% 0 0 4%; font-weight: bold">Actividad Económica Privada del Aspirante y su Familia</h5>
+        <button mat-mini-fab color="primary" (click)="agregarActividad()" [disabled]="arrayActividadEconomica.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarActividad()" [disabled]="arrayActividadEconomica.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayActividadEconomica; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+                <label for="eRSAspirante" class="inp" style="margin: 1% 0 0 2%;">
+                  <input type="text" id="eRSAspirante" placeholder="&nbsp;">
+                  <span class="label">Empresa y/o Razón Social</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="aDAspirante" class="inp" style="margin-left: 10%;">
+                  <input type="text" id="aDAspirante" placeholder="&nbsp;">
+                  <span class="label">Actividad que Desarrolla</span>
+                  <span class="border"></span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </mat-tab>
+
+    <mat-tab label="VI. VIAJES AL EXTERIOR">
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+
+        <button mat-mini-fab color="primary" (click)="agregarViaje()" [disabled]="arrayViajes.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarViaje()" [disabled]="arrayViajes.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayViajes; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+                <label for="fVAspirante" class="inp" style="margin: 0 0 0 2%;">
+                  <input type="date" id="fVAspirante" placeholder="&nbsp;">
+                  <span class="label">Fecha</span>
+                  <span class="border"></span>
+                </label>
+
+                <mat-form-field style="margin-left: 3%;">
+                  <mat-select placeholder="País Visitado">
+                    <mat-option *ngFor="let pais of paises" [value]="pais.value">
+                      {{pais.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <label for="mVAspirante" class="inp" style="margin-left: 3%;">
+                  <input type="text" id="mVAspirante" placeholder="&nbsp;">
+                  <span class="label">Motivo</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="tPVAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="number" id="tPVAspirante" placeholder="&nbsp;">
+                  <span class="border">Tiempo de Permanencia</span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h5 style="margin: 4% 0 0 4%; font-weight: bold">Describa las actividades realizadas en el pasís o países visitados:</h5>
+        <br>
+        <textarea rows="5" cols="100" style="margin: 0 0 0 4%;"> </textarea>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="VII. ORGANISMO DE SEGURIDAD DEL ESTADO">
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+
+        <button mat-mini-fab color="primary" (click)="agregarOrganismos()" [disabled]="arrayOrganismos.length === 5" style="margin: 3% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarOrganismos()" [disabled]="arrayOrganismos.length === 1">-</button>
+
+          <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+            <div class="p-col" *ngFor="let col of arrayOrganismos; let i=index"> <!--[@animation]="'visible'"-->
+              <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+                <span>
+                  <label for="eOSAspirante" class="inp" style="margin: 0 0 0 2%;">
+                    <input type="text" id="eOSAspirante" placeholder="&nbsp;">
+                    <span class="label">Entidad</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="cOSAspirante" class="inp" style="margin: 0 0 0 2%;">
+                    <input type="text" id="cOSAspirante" placeholder="&nbsp;">
+                    <span class="label">Cargo</span>
+                    <span class="border"></span>
+                  </label>
+
+                  <label for="mROSAspirante" class="inp" style="margin-left: 3%;">
+                    <input type="text" id="mROSAspirante" placeholder="&nbsp;">
+                    <span class="label">Motivo Retiro</span>
+                    <span class="border"></span>
+                  </label>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        <h5 style="margin: 5% 0 0 4%; font-weight: bold">Armas de Fuego:</h5>
+        <h6 style="margin: 2% 0 0 10%; font-weight: bold">¿Conoce armas de fuego y/o material explosivo?</h6>
+
+        <label for="cualesAFAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="cualesAFAspirante" placeholder="&nbsp;">
+          <span class="label">¿Cuales?</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="cuandoAFAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="cuandoAFAspirante" placeholder="&nbsp;">
+          <span class="label">¿Cuándo las conoció?:?</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="cualesMAFAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="cualesMAFAspirante" placeholder="&nbsp;">
+          <span class="label">¿Cuáles ha manipulado?</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="cuandoDAFAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="cuandoDAFAspirante" placeholder="&nbsp;">
+          <span class="label">¿Cuándo y dónde las manipuló?</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="companiaAFAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="companiaAFAspirante" placeholder="&nbsp;">
+          <span class="label">¿Cuándo y dónde las manipuló?</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="cGLAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="cGLAspirante" placeholder="&nbsp;">
+          <span class="label">¿Que concepto tiene usted sobre los grupos u organizaciones al margen de la ley?</span>
+          <span class="border"></span>
+        </label>
+
+        <h6 style="margin: 5% 0 0 10%; font-weight: bold">¿Tiene informaciòn que coloque en riesgo la seguridad, la defensa o soberania de la Nación?</h6>
+
+        <label for="iAAspirante" class="inpDos" style="margin: 2% 0 0 10%;">
+          <input type="text" id="iAAspirante" placeholder="&nbsp;">
+          <span class="label">En caso afirmativo y de manera voluntaria explique:</span>
+          <span class="border"></span>
+        </label>
+
+        <h6 style="margin: 5% 0 0 10%; font-weight: bold">¿Tiene información sobre actos de corrupción relacionados con la Institución?</h6>
+
+        <label for="cCAspirante" class="inpDos" style="margin: 2% 0 10% 10%;">
+          <input type="text" id="cCAspirante" placeholder="&nbsp;">
+          <span class="label">En caso afirmativo y de manera voluntaria explique:</span>
+          <span class="border"></span>
+        </label>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="VIII. OTROS DATOS">
+      <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+        <h6 style="margin: 2% 0 0 10%; font-weight: bold">¿Tuvo conocimiento de este empleo por alguien?</h6>
+
+        <label for="pACEAspirante" class="inp" style="margin: 2% 0 0 10%;">
+          <input type="text" id="pACEAspirante" placeholder="&nbsp;">
+          <span class="label">Primer Apellido</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="sACEAspirante" class="inp" style="margin-left: 2%;">
+          <input type="text" id="sACEAspirante" placeholder="&nbsp;">
+          <span class="label">Segundo Apellido</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="pNCEAspirante" class="inp" style="margin-left: 2%;">
+          <input type="text" id="pNCEAspirante" placeholder="&nbsp;">
+          <span class="label">Primer Nombre</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="sNCEAspirante" class="inp" style="margin-left: 2%;">
+          <input type="text" id="sNCEAspirante" placeholder="&nbsp;">
+          <span class="label">Segundo Nombre</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="dCEAspirante" class="inp" style="margin: 2% 0 0 10%;">
+          <input type="text" id="dCEAspirante" placeholder="&nbsp;">
+          <span class="label">Dirección</span>
+          <span class="border"></span>
+        </label>
+
+        <label for="nTCEAspirante" class="inp" style="margin-left: 2%;">
+          <input type="text" id="nTCEAspirante" placeholder="&nbsp;">
+          <span class="label">Teléfono</span>
+          <span class="border"></span>
+        </label>
+
+        <h6 style="margin: 5% 0 0 10%; font-weight: bold">¿Lo recomienda alguien que labora en la institución?</h6>
+
+        <button mat-mini-fab color="primary" (click)="agregarRecomedacion()" [disabled]="arrayRecomendador.length === 5" style="margin: 1% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarRecomedacion()" [disabled]="arrayRecomendador.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayRecomendador; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+                <label for="pARMDAspirante" class="inp" style="margin: 2% 0 0 2%;">
+                  <input type="text" id="pARMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Primer Apellido</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="sARMDAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="sARMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Segundo Apellido</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="pNRMDAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="pNRMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Primer Nombre</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="sNRMDAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="sNRMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Segundo Nombre</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="fRMDAspirante" class="inp" style="margin: 2% 0 0 3%;">
+                  <input type="text" id="fRMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Fuerza</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="cRMDAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="cRMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Cargo</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="uRMDAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="uRMDAspirante" placeholder="&nbsp;">
+                  <span class="label">Undida</span>
+                  <span class="border"></span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h6 style="margin: 7% 0 0 10%; font-weight: bold">¿Explique brevemente la razón por las cuales desea vincularse a la institución y qué expectativas tiene frente a la misma?</h6>
+        <br>
+        <textarea rows="5" cols="100" style="margin: 0 0 0 10%;"> </textarea>
+
+        <h5 style="margin: 7% 0 0 10%; font-weight: bold">Antecedentes Judiciales</h5>
+
+        <button mat-mini-fab color="primary" (click)="agregarAntecedente()" [disabled]="arrayAntecedentes.length === 5" style="margin: 1% 0 0 50%">+</button>
+        <button mat-mini-fab color="primary" (click)="quitarAntecedente()" [disabled]="arrayAntecedentes.length === 1">-</button>
+
+        <div class="p-grid" style="margin-left: 8%; margin-bottom: 3%">
+          <div class="p-col" *ngFor="let col of arrayAntecedentes; let i=index"> <!--[@animation]="'visible'"-->
+            <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
+              <span>
+                <label for="fAJAspirante" class="inp" style="margin: 2% 0 0 2%;">
+                  <input type="date" id="fAJAspirante" placeholder="&nbsp;">
+                  <span class="label">Fecha</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="tIAJAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="tIAJAspirante" placeholder="&nbsp;">
+                  <span class="label">Tipo de Investigación</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="cIAJAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="cIAJAspirante" placeholder="&nbsp;">
+                  <span class="label">Causa</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="aIAJAspirante" class="inp" style="margin-left: 2%;">
+                  <input type="text" id="aIAJAspirante" placeholder="&nbsp;">
+                  <span class="label">Autoridad</span>
+                  <span class="border"></span>
+                </label>
+
+                <label for="eAIAJAspirante" class="inpDos" style="margin: 2% 0 0 3%;">
+                  <input type="text" id="eAIAJAspirante" placeholder="&nbsp;">
+                  <span class="label">Estado Actual del Proceso</span>
+                  <span class="border"></span>
+                </label>
+
+                <br>
+
+                <label style="margin: 4% 0 0 3%">¿Responsable?</label>
+                <mat-radio-group style="margin: 3% 0 0 3%">
+                  <mat-radio-button value="1">Sí</mat-radio-button>
+                  <mat-radio-button value="2" style="margin-left: 2%">No</mat-radio-button>
+                </mat-radio-group>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <h5 style="margin: 7% 0 0 10%; font-weight: bold">Datos Adicionales</h5>
+
+        <textarea rows="5" cols="100" style="margin: 1% 0 0 10%;"> </textarea>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+<!--
+<div class="button-row flotante_boton_enviar">
+    <button mat-stroked-button color="primary">Guardar y Enviar</button>
+</div>
+-->

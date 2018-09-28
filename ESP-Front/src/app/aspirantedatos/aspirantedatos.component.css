@@ -1,0 +1,221 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    display: grid;
+    font-family: Avenir;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+* {
+    box-sizing: border-box;
+}
+.inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 220px;
+}
+.inp .label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 16px;
+    color: #9098a9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all 0.2s ease;
+}
+.inp .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #0695ff;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all 0.15s ease;
+}
+.inp input{
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    /*border-bottom: 2px solid #c8ccd4;*/
+    border-bottom: 2px solid #0f1e83; /*Cambio Color Línea Inferior Inputs*/
+    background: none;
+    border-radius: 0;
+    color: #223254; /*Cambio Color Letra Escrita Inputs*/
+    transition: all 0.15s ease;
+}
+
+.inp input:hover {
+    background: rgba(34,50,84,0.03);
+}
+.inp input:not(:placeholder-shown) + span {
+    color: #5a667f;
+    transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus {
+    background: none;
+    outline: none;
+}
+.inp input:focus + span {
+    color: #000000;   /*Cambio Color Inputs Letra Arriba Inputs*/
+    transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus + span + .border {
+    transform: scaleX(1);
+}
+
+.flotante_derecho{
+
+    float: right;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-right: 20%;
+    margin-top: 10%;
+    width: 1200px;
+    height: 600px;
+    /*width: 60%;
+    height: 70%;*/
+    border-radius: 20px;
+    /*overflow-y: scroll;*/
+}
+
+.flotante_izquierdo {
+
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 10px;
+    height: 10px;
+    max-width: 20%;
+}
+
+.flotante_boton_enviar {
+
+    float: bottom;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 10px;
+    height: 10px;
+    max-width: 20%;
+}
+
+hr {
+    background-color: #5a667f;
+    height: 2px;
+}
+
+.button-row button,
+.button-row a {
+    margin-top: 20px;
+    margin-left: 780px;
+    font-weight: bold;
+    font-size: large;
+}
+
+/*  PRIMEFACES  */
+.box,
+.sample-layout > div {
+    background-color: #cce4f7;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4px;
+}
+
+.box-stretched {
+    height: 100%;
+}
+
+.sample-layout {
+    margin: 0;
+}
+
+.sample-layout > div {
+    border: 1px solid #ffffff;
+}
+
+.vertical-container {
+    margin: 0;
+    height: 200px;
+    background: #efefef;
+    border-radius: 4px;
+}
+
+.nested-grid .p-col-4 {
+    padding-bottom: 1em;
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.inpDos {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+}
+.inpDos .label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 16px;
+    color: #9098a9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all 0.2s ease;
+}
+.inpDos .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #0695ff;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all 0.15s ease;
+}
+.inpDos input{
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    /*border-bottom: 2px solid #c8ccd4;*/
+    border-bottom: 2px solid #0f1e83; /*Cambio Color Línea Inferior Inputs*/
+    background: none;
+    border-radius: 0;
+    color: #223254; /*Cambio Color Letra Escrita Inputs*/
+    transition: all 0.15s ease;
+}
+
+.inpDos input:hover {
+    background: rgba(34,50,84,0.03);
+}
+.inpDos input:not(:placeholder-shown) + span {
+    color: #5a667f;
+    transform: translateY(-26px) scale(0.75);
+}
+.inpDos input:focus {
+    background: none;
+    outline: none;
+}
+.inpDos input:focus + span {
+    color: #000000;   /*Cambio Color Letra Arriba Inputs*/
+    transform: translateY(-26px) scale(0.75);
+}
+.inpDos input:focus + span + .border {
+    transform: scaleX(1);
+}
