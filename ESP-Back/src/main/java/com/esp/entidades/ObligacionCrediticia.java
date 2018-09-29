@@ -2,11 +2,16 @@ package com.esp.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "obligaciones_crediticias", schema = "ESP")
 public class ObligacionCrediticia {
+	
+	@Id
+	@GeneratedValue
 	
 	@Column(name = "id_obligacion")
 	private String id;

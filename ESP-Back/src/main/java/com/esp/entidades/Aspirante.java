@@ -8,12 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "aspirante", schema = "ESP")
 public class Aspirante {
 	
-	@Id
-	@GeneratedValue
+	@Id()
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	
 	@Column(name = "primer_apellido")
 	private String primerApellido;
