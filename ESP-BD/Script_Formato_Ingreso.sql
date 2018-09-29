@@ -1,7 +1,5 @@
 CREATE SCHEMA ESP;
 
--- ALTER TABLE ASPIRANTE DROP PRIMARY KEY;
-
 CREATE TABLE aspirante(
 -- nombre_usuario VARCHAR(10),
 primer_apellido VARCHAR(20),

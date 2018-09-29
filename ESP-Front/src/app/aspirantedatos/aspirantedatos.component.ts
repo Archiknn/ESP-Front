@@ -5,6 +5,7 @@ import { OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
 
 declare var $: any;
 
+
 export interface TipoDocumento {
     value: string;
     viewValue: string;
@@ -141,8 +142,16 @@ export class AspirantedatosComponent implements OnInit {
         {value: 'AB+', viewValue: 'AB+'}
     ];
 
+
+    mensaje() {
+        window.alert('¡Datos Guardados Correctamente!');
+    }
+
     constructor() {
     }
+
+
+
 
     ngOnInit() {
 
