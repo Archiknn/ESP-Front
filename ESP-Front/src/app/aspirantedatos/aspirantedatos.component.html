@@ -511,6 +511,14 @@
                         <span class="label">Número de Documento</span>
                         <span class="border"></span>
                       </label>
+
+                      <label for="fNHAspirante" class="inp" style="margin-left: 3%">
+                        <input type="date" id="fNHAspirante" placeholder="&nbsp;">
+                        <span class="label">Fecha de Nacimiento</span>
+                        <span class="border"></span>
+                      </label>
+
+
                   </span>
               </div>
             </div>
@@ -572,15 +580,13 @@
               <span class="border"></span>
             </label>
 
-            <br>
-
-            <label for="dPAspirante" class="inp" style="margin-right: 3%; margin-top: 2%">
+            <label for="dPAspirante" class="inp" style="margin: 2% 0 0 3%">
               <input type="text" id="dPAspirante" placeholder="&nbsp;">
               <span class="label">Dirección</span>
               <span class="border"></span>
             </label>
 
-            <mat-form-field>
+            <mat-form-field style="margin-left: 2%;">
               <mat-select placeholder="Departamento">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
@@ -588,7 +594,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field style="margin-left: 4%;">
+            <mat-form-field style="margin-top: 2%;">
               <mat-select placeholder="Ciudad">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
@@ -602,17 +608,21 @@
               <span class="border"></span>
             </label>
 
-            <label for="nTPAspirante" class="inp" style="margin-top: 2%">
+            <label for="nTPAspirante" class="inp" style="margin-left: 2%">
               <input type="text" id="nTPAspirante" placeholder="&nbsp;">
               <span class="label">Número de Teléfono</span>
               <span class="border"></span>
             </label>
 
-            <label for="oPAspirante" class="inp" style="margin-left: 3%">
+            <label for="oPAspirante" class="inp" style="margin-left: 2%">
               <input type="text" id="oPAspirante" placeholder="&nbsp;">
               <span class="label">Ocupación</span>
               <span class="border"></span>
             </label>
+
+
+            <!-- AGREGAR PARENTESCO AUTOMÁTICO -->
+
           </div>
 
           <h6 style="margin: 4% 0 0 10%; font-weight: bold">Madre:</h6>
@@ -709,6 +719,9 @@
               <span class="label">Ocupación</span>
               <span class="border"></span>
             </label>
+
+            <!-- AGREGAR PARENTESCO AUTOMÁTICO -->
+
           </div>
         </div><!-- END DIV PADRES -->
 

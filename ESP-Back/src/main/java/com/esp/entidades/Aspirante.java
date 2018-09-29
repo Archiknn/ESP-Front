@@ -60,13 +60,15 @@ public class Aspirante {
 	@Column(name = "peso")
 	private int peso;
 	@Column(name = "direccion_actual")
-	private String direccion;
+	private String direccionActual;
 	@Column(name = "barrio_actual")
 	private String barrioActual;
 	@Column(name = "departamento_direccion_actual")
 	private String departamentoDireccionActual;
 	@Column(name = "ciudad_direccion_actual")
 	private String ciudadDireccionActual;
+	@Column(name = "direccion_anterior")
+	private String direccionAnterior;
 	@Column(name = "barrio_anterior")
 	private String barrioAnterior;
 	@Column(name = "departamento_direccion_anterior")
@@ -95,11 +97,11 @@ public class Aspirante {
 			String departamentoExpedicionDocumento, String ciudadExpedicionDocumento, String numeroPasaporte,
 			String departamentoExpedicionPasaporte, String ciudadExpedicionPasaporte, String paisNacimiento,
 			String departamentoNacimiento, String ciudadNacimiento, Date fechaNacimiento, String grupoSanguineo,
-			String ocupacion, String numeroTarjetaProfesional, int estatura, int peso, String direccion,
+			String ocupacion, String numeroTarjetaProfesional, int estatura, int peso, String direccionActual,
 			String barrioActual, String departamentoDireccionActual, String ciudadDireccionActual,
-			String barrioAnterior, String departamentoDireccionAnterior, String ciudadDireccionAnterior,
-			int numeroCelular, int numeroTelefonoActual, int numeroTelefonoAnterior, String correoElectronico,
-			String redesSociales) {
+			String direccionAnterior, String barrioAnterior, String departamentoDireccionAnterior,
+			String ciudadDireccionAnterior, int numeroCelular, int numeroTelefonoActual, int numeroTelefonoAnterior,
+			String correoElectronico, String redesSociales) {
 		super();
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
@@ -123,10 +125,11 @@ public class Aspirante {
 		this.numeroTarjetaProfesional = numeroTarjetaProfesional;
 		this.estatura = estatura;
 		this.peso = peso;
-		this.direccion = direccion;
+		this.direccionActual = direccionActual;
 		this.barrioActual = barrioActual;
 		this.departamentoDireccionActual = departamentoDireccionActual;
 		this.ciudadDireccionActual = ciudadDireccionActual;
+		this.direccionAnterior = direccionAnterior;
 		this.barrioAnterior = barrioAnterior;
 		this.departamentoDireccionAnterior = departamentoDireccionAnterior;
 		this.ciudadDireccionAnterior = ciudadDireccionAnterior;
@@ -141,28 +144,20 @@ public class Aspirante {
 	public String getPrimerApellido() {
 		return primerApellido;
 	}
-
-
 	public void setPrimerApellido(String primerApellido) {
 		this.primerApellido = primerApellido;
 	}
 
-
 	public String getSegundoApellido() {
 		return segundoApellido;
 	}
-
-
 	public void setSegundoApellido(String segundoApellido) {
 		this.segundoApellido = segundoApellido;
 	}
 
-
 	public String getPrimerNombre() {
 		return primerNombre;
 	}
-
-
 	public void setPrimerNombre(String primerNombre) {
 		this.primerNombre = primerNombre;
 	}
@@ -358,13 +353,13 @@ public class Aspirante {
 	}
 
 
-	public String getDireccion() {
-		return direccion;
+	public String getDireccionActual() {
+		return direccionActual;
 	}
 
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setDireccionActual(String direccionActual) {
+		this.direccionActual = direccionActual;
 	}
 
 
@@ -395,6 +390,16 @@ public class Aspirante {
 
 	public void setCiudadDireccionActual(String ciudadDireccionActual) {
 		this.ciudadDireccionActual = ciudadDireccionActual;
+	}
+
+
+	public String getDireccionAnterior() {
+		return direccionAnterior;
+	}
+
+
+	public void setDireccionAnterior(String direccionAnterior) {
+		this.direccionAnterior = direccionAnterior;
 	}
 
 
