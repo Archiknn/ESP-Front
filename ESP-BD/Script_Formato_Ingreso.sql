@@ -126,11 +126,12 @@ CREATE TABLE estudio_academico(
 id_estudio INT(10),
 numero_documento_aspirante VARCHAR(20),
 estudio_realizado VARCHAR(40),
-fecha_finalizacion DATE,
+ano_finalizacion INT(4),
 titulo_obtenido VARCHAR(40),
 nombre_institucion VARCHAR(40),
-ciudad VARCHAR(20),
 pais VARCHAR(20),
+departamento VARCHAR(20),
+ciudad VARCHAR(20),
 PRIMARY KEY(id_estudio)
 );
 
@@ -139,7 +140,7 @@ id_experiencia VARCHAR(10),
 numero_documento_aspirante VARCHAR(20),
 empresa VARCHAR(40),
 direccion VARCHAR(30),
-Departamento_direccion VARCHAR(20),
+departamento_direccion VARCHAR(20),
 ciudad_direccion VARCHAR(20),
 cargo VARCHAR(20),
 tiempo_meses INT(10),
