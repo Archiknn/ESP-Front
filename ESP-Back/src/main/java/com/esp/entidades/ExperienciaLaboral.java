@@ -14,7 +14,7 @@ public class ExperienciaLaboral {
 	@GeneratedValue
 	
 	@Column(name = "id_experiencia")
-	private int id;
+	private String id;
 	@Column(name = "numero_documento_aspirante")
 	private String numeroDocumentoAspirante;
 	@Column(name = "empresa")
@@ -48,7 +48,7 @@ public class ExperienciaLaboral {
 	}
 
 
-	public ExperienciaLaboral(int id, String numeroDocumentoAspirante, String empresa, String direccion,
+	public ExperienciaLaboral(String id, String numeroDocumentoAspirante, String empresa, String direccion,
 			String departamentoDireccion, String ciudadDireccion, String cargo, int tiempoMeses, int numeroCelular,
 			int numeroTelefono, int sueldo, String motivoRetiro, String nombreJefe, String paginaWeb) {
 		super();
@@ -69,10 +69,10 @@ public class ExperienciaLaboral {
 	}
 
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

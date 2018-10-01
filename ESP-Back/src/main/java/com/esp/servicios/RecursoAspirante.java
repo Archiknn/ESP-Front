@@ -1,6 +1,5 @@
 package com.esp.servicios;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,12 +12,20 @@ import com.esp.entidades.CompaneraSentimental;
 import com.esp.entidades.Hijo;
 import com.esp.entidades.LibretaMilitar;
 import com.esp.entidades.Progenitor;
+import com.esp.repositorio.ActividadEconomicaRepository;
+import com.esp.repositorio.AntecedentesJudicialesRepository;
+import com.esp.repositorio.ArmasRepository;
 import com.esp.repositorio.AspiranteRepository;
+import com.esp.repositorio.BienPatrimonialRepository;
 import com.esp.repositorio.CompaneraSentimentalRepository;
+import com.esp.repositorio.CuentaBancariaRepository;
 import com.esp.repositorio.EstudioAcademicoRepository;
+import com.esp.repositorio.ExperienciaLaboralRepository;
 import com.esp.repositorio.HermanoRepository;
 import com.esp.repositorio.HijoRepository;
+import com.esp.repositorio.IngresoRentaRepository;
 import com.esp.repositorio.LibretaMilitarRepository;
+import com.esp.repositorio.ObligacionCrediticiaRepository;
 import com.esp.repositorio.ProgenitorRepository;
 
 @RestController
@@ -28,13 +35,27 @@ public class RecursoAspirante {
 	
 	@Autowired
 	
+	
+	private ActividadEconomicaRepository actividadEconomicaRepo;
+	private AntecedentesJudicialesRepository antecedentesJudicialesRepo;
+	private ArmasRepository armasRepo;
 	private AspiranteRepository aspiranteRepo;
-	private LibretaMilitarRepository libretaMilitarRepo;
+	private BienPatrimonialRepository bienPatrimonialRepo;
 	private CompaneraSentimentalRepository companeraSentimentalRepo;
-	private HijoRepository hijoRepo;
-	private ProgenitorRepository progenitorRepo;
+	private CuentaBancariaRepository cuentaBancariaRepo;
+	private EstudioAcademicoRepository estudioAcademicoRepo;
+	private ExperienciaLaboralRepository experienciaLaboralRepo;
 	private HermanoRepository hermanoRepo;
-	private EstudioAcademicoRepository EstudioAcademicoRepo;
+	private HijoRepository hijoRepo;
+	private IngresoRentaRepository ingresoRentaRepo;
+	private LibretaMilitarRepository libretaMilitarRepo;
+	private ObligacionCrediticiaRepository ObligacionCrediticiaRepo;
+	
+	
+	private ProgenitorRepository progenitorRepo;
+
+	
+	
 	
 	
 	@PostMapping(value = "/insertarAspirante")
