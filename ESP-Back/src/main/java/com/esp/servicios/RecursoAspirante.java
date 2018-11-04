@@ -32,10 +32,8 @@ import com.esp.repositorio.ProgenitorRepository;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/esp")
 public class RecursoAspirante {
-	
+
 	@Autowired
-	
-	
 	private ActividadEconomicaRepository actividadEconomicaRepo;
 	private AntecedentesJudicialesRepository antecedentesJudicialesRepo;
 	private ArmasRepository armasRepo;
@@ -50,45 +48,43 @@ public class RecursoAspirante {
 	private IngresoRentaRepository ingresoRentaRepo;
 	private LibretaMilitarRepository libretaMilitarRepo;
 	private ObligacionCrediticiaRepository ObligacionCrediticiaRepo;
-	
-	
 	private ProgenitorRepository progenitorRepo;
 
-	
-	
-	
-	
 	@PostMapping(value = "/insertarAspirante")
-	private String insertarAspirante(@RequestBody Aspirante aspirante) {		
-		aspiranteRepo.save(aspirante);
-		return "Insertado el Aspirante: " + aspirante.getNumeroDocumento();
-	}
+	private String insertarAspirante(@RequestBody String aspirante) {
 		
-	
-	@PostMapping(value = "/insertarLibretaMilitar")
-	private String insertarLibretaMilitar(@RequestBody LibretaMilitar libretaMilitar) {		
-		libretaMilitarRepo.save(libretaMilitar);		
-		return "Insertado el Aspirante: " + libretaMilitar.getNumeroDocumentoAspirante();
+		
+		System.out.println("String: " + aspirante);
+
+		// aspiranteRepo.save(aspirante);
+		return "Insertado el Aspirante: ";// + aspirante.getNumeroDocumento();
 	}
-	
-	
-	@PostMapping(value = "/insertarCompaneraSentimental")
-	private String insertarCompaneraSentimental(@RequestBody CompaneraSentimental companeraSentimental) {		
-		companeraSentimentalRepo.save(companeraSentimental);		
-		return "Insertado el Aspirante: " + companeraSentimental.getNumeroDocumentoAspirante();
-	}
-	
-	
-	@PostMapping(value = "/insertarHijo")
-	private String insertarHijo(@RequestBody Hijo hijo) {		
-		hijoRepo.save(hijo);
-		return "Insertado el Aspirante: " + hijo.getNumeroDocumentoAspirante();
-	}
-	
-	
-	@PostMapping(value = "/insertarProgenitor")
-	private String insertarProgenitor(@RequestBody Progenitor progenitor) {		
-		progenitorRepo.save(progenitor);
-		return "Insertado el Aspirante: " + progenitor.getNumeroDocumentoAspirante();
-	}
+
+//	
+//	@PostMapping(value = "/insertarLibretaMilitar")
+//	private String insertarLibretaMilitar(@RequestBody LibretaMilitar libretaMilitar) {		
+//		libretaMilitarRepo.save(libretaMilitar);		
+//		return "Insertado el Aspirante: " + libretaMilitar.getNumeroDocumentoAspirante();
+//	}
+//	
+//	
+//	@PostMapping(value = "/insertarCompaneraSentimental")
+//	private String insertarCompaneraSentimental(@RequestBody CompaneraSentimental companeraSentimental) {		
+//		companeraSentimentalRepo.save(companeraSentimental);		
+//		return "Insertado el Aspirante: " + companeraSentimental.getNumeroDocumentoAspirante();
+//	}
+//	
+//	
+//	@PostMapping(value = "/insertarHijo")
+//	private String insertarHijo(@RequestBody Hijo hijo) {		
+//		hijoRepo.save(hijo);
+//		return "Insertado el Aspirante: " + hijo.getNumeroDocumentoAspirante();
+//	}
+//	
+//	
+//	@PostMapping(value = "/insertarProgenitor")
+//	private String insertarProgenitor(@RequestBody Progenitor progenitor) {		
+//		progenitorRepo.save(progenitor);
+//		return "Insertado el Aspirante: " + progenitor.getNumeroDocumentoAspirante();
+//	}
 }

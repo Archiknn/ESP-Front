@@ -75,17 +75,10 @@ body {
 }
 
 .flotante_derecho{
-
-    float: right;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-right: 20%;
-    margin-top: 10%;
+    display: block;
     width: 1200px;
-    height: 600px;
-    /*width: 60%;
-    height: 70%;*/
-    border-radius: 20px;
-    /*overflow-y: scroll;*/
+    margin: 2.5% auto;
 }
 
 .flotante_izquierdo {

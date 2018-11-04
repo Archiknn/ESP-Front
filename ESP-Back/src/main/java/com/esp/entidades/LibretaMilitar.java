@@ -2,35 +2,39 @@ package com.esp.entidades;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name = "libreta_militar", schema = "ESP")
+@Embeddable
 public class LibretaMilitar {
-	
+
 	@Id
 	@GeneratedValue
-	
-	@Column (name = "numero")
-	private int numero;
-	@Column (name = "numero_documento_aspirante")
-	private String numeroDocumentoAspirante;
-	@Column (name = "clase")
-	private String clase;
-	@Column (name = "distrito")
-	private int distrito;
-	@Column (name = "fecha_expedicion")
-	private Date fechaExpedicion;
-	
-	
-	public LibretaMilitar() {		
-	}
 
+	@Column(name = "numero")
+	private int numero;
+	@Column(name = "numero_documento_aspirante")
+	private String numeroDocumentoAspirante;
+	@Column(name = "clase")
+	private String clase;
+	@Column(name = "distrito")
+	private int distrito;
+	@Column(name = "fecha_expedicion")
+	private Date fechaExpedicion;
+
+//	private Aspirante aspirante;
+
+	public LibretaMilitar() {
+	}
 
 	public LibretaMilitar(int numero, String numeroDocumentoAspirante, String clase, int distrito,
 			Date fechaExpedicion) {
@@ -42,53 +46,51 @@ public class LibretaMilitar {
 		this.fechaExpedicion = fechaExpedicion;
 	}
 
-
 	public int getNumero() {
 		return numero;
 	}
 
-
 	public void setNumero(int numero) {
 		this.numero = numero;
-	}
-
-
+	}	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn
 	public String getNumeroDocumentoAspirante() {
 		return numeroDocumentoAspirante;
 	}
-
 
 	public void setNumeroDocumentoAspirante(String numeroDocumentoAspirante) {
 		this.numeroDocumentoAspirante = numeroDocumentoAspirante;
 	}
 
-
 	public String getClase() {
 		return clase;
 	}
-
 
 	public void setClase(String clase) {
 		this.clase = clase;
 	}
 
-
 	public int getDistrito() {
 		return distrito;
 	}
-
 
 	public void setDistrito(int distrito) {
 		this.distrito = distrito;
 	}
 
-
 	public Date getFechaExpedicion() {
 		return fechaExpedicion;
 	}
 
-
 	public void setFechaExpedicion(Date fechaExpedicion) {
 		this.fechaExpedicion = fechaExpedicion;
 	}
+	
+//	@Override
+//    public String toString() {
+//        return String.format(
+//                "LibretaMilitar[numero=%d, numeroDocumentoAspirante='%s', clase='%s', distrito='%s', fechaExpedicion='%s']",
+//                numero, aspirante.getNumeroDocumento(), clase, distrito, fechaExpedicion);
+//	}
 }

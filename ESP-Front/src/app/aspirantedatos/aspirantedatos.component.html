@@ -3,6 +3,8 @@
   <img src="../../assets/Escudo_Ejercito_de_Colombia.png" width="270px" height="300px">
 </div>
 
+
+<form [formGroup] = "form" (ngSubmit)="putAspirante(form.getRawValue())">
 <div class="flotante_derecho">
 
   <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
@@ -33,25 +35,25 @@
 
           <div style="margin: 3% 0 0 11%">
             <label for="pApellido" class="inp">
-              <input type="text" id="pApellido" placeholder="&nbsp;">
+              <input type="text" id="pApellido" placeholder="&nbsp;" formControlName="pApellido">
               <span class="label">Primer Apellido</span>
               <span class="border"></span>
             </label>
 
             <label for="sApellido" class="inp" style="margin-left: 10px">
-              <input type="text" id="sApellido" placeholder="&nbsp;">
+              <input type="text" id="sApellido" placeholder="&nbsp;" formControlName="sApellido">
               <span class="label">Segundo Apellido</span>
               <span class="border"></span>
             </label>
 
             <label for="pNombre" class="inp" style="margin-left: 10px">
-              <input type="text" id="pNombre" placeholder="&nbsp;">
+              <input type="text" id="pNombre" placeholder="&nbsp;" formControlName="pNombre">
               <span class="label">Primer Nombre</span>
               <span class="border"></span>
             </label>
 
             <label for="sNombre" class="inp" style="margin-left: 10px">
-              <input type="text" id="sNombre" placeholder="&nbsp;">
+              <input type="text" id="sNombre" placeholder="&nbsp;" formControlName="sNombre">
               <span class="label">Segundo Nombre</span>
               <span class="border"></span>
             </label>
@@ -61,7 +63,7 @@
             <h5 style="margin: 4% 0 0 4%; font-weight: bold">Documento de Identidad</h5>
 
             <mat-form-field class="inp" style="margin: 3% 0 0 10%;">
-              <mat-select placeholder="Tipo">
+              <mat-select placeholder="Tipo" formControlName="slctTDA">
                 <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
                   {{tipodocumento.viewValue}}
                 </mat-option>
@@ -134,19 +136,19 @@
           <div>
             <h5 style="margin: 4% 0 0 4%; font-weight: bold">Libreta Militar</h5>
 
-            <label for="nLMAspirante" class="inp" style="margin: 3% 0% 0% 11%;">
+            <label for="nLMAspirante" class="inp" style="margin: 3% 0 0 11%;">
               <input type="text" id="nLMAspirante" placeholder="&nbsp;">
               <span class="label">Número</span>
               <span class="border"></span>
             </label>
 
-            <label for="cLMAspirante" class="inp" style="margin: 3% 0% 0% 11%;">
+            <label for="cLMAspirante" class="inp" style="margin: 3% 0 0 11%;">
               <input type="text" id="cLMAspirante" placeholder="&nbsp;">
               <span class="label">Clase</span>
               <span class="border"></span>
             </label>
 
-            <label for="fELMAspirante" class="inp" style="margin: 3% 0% 0% 11%;">
+            <label for="fELMAspirante" class="inp" style="margin: 3% 0 0 11%;">
               <input type="date" id="fELMAspirante" placeholder="&nbsp;">
               <span class="label">Fecha Expedición</span>
               <span class="border"></span>
@@ -1732,5 +1734,6 @@
 </div>
 
 <div class="button-row flotante_boton_enviar">
-    <button mat-stroked-button color="primary" (click)="mensaje()">Guardar y Enviar</button>
+  <button mat-stroked-button color="primary" (click)="putAspirante()">Guardar y Enviar</button>
 </div>
+</form>

@@ -1,6 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, Injectable, ViewEncapsulation} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import { OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
+import {HttpClient} from '@angular/common/http';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 // import * as $ from 'jquery';
 
 declare var $: any;
@@ -62,8 +64,11 @@ export interface GrupoSanguineo {
     encapsulation: ViewEncapsulation.None
 })
 
-
+@Injectable()
 export class AspirantedatosComponent implements OnInit {
+
+    private putURL = 'http://localhost:8080/esp/insertarAspirante';
+    form: FormGroup;
 
     arrayRedSocial: number[];
     arrayRSConguye: number[];
@@ -142,26 +147,43 @@ export class AspirantedatosComponent implements OnInit {
         {value: 'AB+', viewValue: 'AB+'}
     ];
 
+    constructor(private http: HttpClient) {
+    }
+
 
     mensaje() {
         window.alert('¡Datos Guardados Correctamente!');
     }
 
-    constructor() {
-    }
+    putAspirante = function(user) {
+        console.log(user);
+        // const formulario = ;
+        return this.http.post(this.putURL, {
+            'primerApellido': user.pApellido,
+            'tipoDocumento' : user.slctTDA
+        }).subscribe();
+    };
 
-
-
+    putAspirante_2 = function(user) {
+        console.log(user);
+        return this.http.post(this.putURL,
+            {
+                'primerApellido': this.pApellido,
+                'segundoApellido': 'Bonilla',
+                'primerNombre': 'Luis',
+                'segundoNombre': 'Argemiro',
+                'tipoDocumento' : 'C.C',
+                'numeroDocumento': '123456',
+                'fechaExpedicionDocumento': '2018-22-01'
+            }).subscribe();
+    };
 
     ngOnInit() {
-
         $(document).ready(function () {
             $('#boton').click(function () {
                 window.alert('Hola');
             });
         });
-
-
 
         this.arrayRSConguye = [0];
         this.arrayNHijos = [0];
@@ -184,6 +206,14 @@ export class AspirantedatosComponent implements OnInit {
         this.arrayRecomendador = [0];
         this.arrayAntecedentes = [0];
 
+
+        this.form = new FormGroup({
+
+            pApellido: new FormControl(''),
+            slctTDA: new FormControl('', [ Validators.maxLength(30), Validators.required ])
+        });
+
+        // let a:String = this.form.value.pApellido;
     }
 
     agregarRedSocial() {
