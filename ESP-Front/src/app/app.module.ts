@@ -69,7 +69,8 @@ const appRoutes: Routes = [
       ReactiveFormsModule,
       MatDatepickerModule,
       ButtonModule,
-      MatRadioModule
+      MatRadioModule,
+      MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

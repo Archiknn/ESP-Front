@@ -68,7 +68,7 @@ export interface GrupoSanguineo {
 export class AspirantedatosComponent implements OnInit {
 
     private putURL = 'http://localhost:8080/esp/insertarAspirante';
-    form: FormGroup;
+    form_1: FormGroup;
 
     arrayRedSocial: number[];
     arrayRSConguye: number[];
@@ -93,9 +93,9 @@ export class AspirantedatosComponent implements OnInit {
 
 
     tiposdocumentos: TipoDocumento[] = [
-        {value: 'Cedula', viewValue: 'C.C'},
+        {value: 'C.C', viewValue: 'C.C'},
         {value: 'Pasaporte', viewValue: 'Pasaporte'},
-        {value: 'Tarjeta-Identidad', viewValue: 'T.I'}
+        {value: 'T.I', viewValue: 'T.I'}
     ];
 
     paises: Pais[] = [
@@ -150,32 +150,22 @@ export class AspirantedatosComponent implements OnInit {
     constructor(private http: HttpClient) {
     }
 
-
-    mensaje() {
-        window.alert('¡Datos Guardados Correctamente!');
-    }
-
-    putAspirante = function(user) {
+     putAspirante = function (user) {
         console.log(user);
-        // const formulario = ;
-        return this.http.post(this.putURL, {
-            'primerApellido': user.pApellido,
-            'tipoDocumento' : user.slctTDA
-        }).subscribe();
-    };
-
-    putAspirante_2 = function(user) {
-        console.log(user);
-        return this.http.post(this.putURL,
-            {
-                'primerApellido': this.pApellido,
-                'segundoApellido': 'Bonilla',
-                'primerNombre': 'Luis',
-                'segundoNombre': 'Argemiro',
-                'tipoDocumento' : 'C.C',
-                'numeroDocumento': '123456',
-                'fechaExpedicionDocumento': '2018-22-01'
-            }).subscribe();
+         return this.http.post(this.putURL,
+             {
+             'primerApellido' : user.pApellido,
+             'segundoApellido' : user.sApellido,
+             'primerNombre' : user.pNombre,
+             'segundoNombre' : user.sNombre,
+             'tipoDocumento' : user.slctTDA,
+             'numeroDocumento' : user.nDocumento
+             },
+             {
+             'numero' : user.nLMAspirante,
+             'clase' : user.cLMAspirante,
+             'distrito' : user.dLMilitar
+             }).subscribe();
     };
 
     ngOnInit() {
@@ -206,14 +196,55 @@ export class AspirantedatosComponent implements OnInit {
         this.arrayRecomendador = [0];
         this.arrayAntecedentes = [0];
 
+        this.form_1 = new FormGroup({
 
-        this.form = new FormGroup({
+            pApellido: new FormControl('', [Validators.maxLength(20), Validators.required]),
+            sApellido: new FormControl('', [Validators.maxLength(20), Validators.required]),
+            pNombre: new FormControl('', [Validators.maxLength(20), Validators.required]),
+            sNombre: new FormControl('', [Validators.maxLength(20)]),
+            slctTDA: new FormControl('', [Validators.required]),
+            nDocumento: new FormControl('', [Validators.maxLength(20), Validators.required ]),
+            fExpedicion: new FormControl('', [Validators.required]),
+            slctPEDA: new FormControl('', [Validators.required]),
+            slctDEDA: new FormControl('', [Validators.required]),
+            slctCEDA: new FormControl('', [Validators.required]),
 
-            pApellido: new FormControl(''),
-            slctTDA: new FormControl('', [ Validators.maxLength(30), Validators.required ])
+            nPasaporte: new FormControl('', [Validators.maxLength(20)]),
+            slctDEPA: new FormControl(''),
+            slctCEPA: new FormControl(''),
+
+            nLMAspirante: new FormControl('', [Validators.maxLength(10)]),
+            cLMAspirante: new FormControl('', [Validators.maxLength(10)]),
+            dLMilitar: new FormControl('', [Validators.maxLength(2)]),
+            fELMAspirante: new FormControl(''),
+
+            slctPNA: new FormControl('', [Validators.required]),
+            slctDNA: new FormControl('', [Validators.required]),
+            slctCNA: new FormControl('', [Validators.required]),
+            fNacimiento: new FormControl('', [Validators.required]),
+
+            dAspirante: new FormControl('', [Validators.maxLength(30), Validators.required]),
+            nTCAspirante: new FormControl('', [Validators.maxLength(10)]),
+            nTFAspirante: new FormControl('', [Validators.maxLength(10)]),
+            slctPRActA: new FormControl(''),
+            slctDRActA: new FormControl(''),
+            slctCRActA: new FormControl(''),
+
+            dAAspirante: new FormControl('', [Validators.maxLength(30)]),
+            slctPRAntA: new FormControl(''),
+            slctDRAntA: new FormControl(''),
+            slctCRAntA: new FormControl(''),
+            nTRAspirante: new FormControl('', [Validators.maxLength(10)]),
+
+            slctECA: new FormControl('', [Validators.required]),
+            slctGSA: new FormControl('', [Validators.required]),
+            puOficioA: new FormControl('', [Validators.maxLength(50)]),
+            tProfesionalA: new FormControl('', [Validators.maxLength(20)]),
+            estaturaA: new FormControl('', [Validators.maxLength(3), Validators.required]),
+            pesoA: new FormControl('', [Validators.maxLength(3), Validators.required]),
+            cEelecAspirante: new FormControl('', [Validators.maxLength(30)]),
+            rSocialesA: new FormControl('', [Validators.maxLength(100)])
         });
-
-        // let a:String = this.form.value.pApellido;
     }
 
     agregarRedSocial() {

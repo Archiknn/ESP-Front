@@ -50,7 +50,7 @@ body {
     /*border-bottom: 2px solid #c8ccd4;*/
     border-bottom: 2px solid #0f1e83; /*Cambio Color Línea Inferior Inputs*/
     background: none;
-    border-radius: 0;
+    /*border-radius: 0;*/
     color: #223254; /*Cambio Color Letra Escrita Inputs*/
     transition: all 0.15s ease;
 }
@@ -74,11 +74,18 @@ body {
     transform: scaleX(1);
 }
 
+.banner{
+    width: 100%;
+    height: 10%;
+    background: cadetblue;
+}
+
 .flotante_derecho{
     background-color: rgba(255, 255, 255, 0.9);
     display: block;
     width: 1200px;
-    margin: 2.5% auto;
+    margin: 4% auto;
+    border-radius: 2%;
 }
 
 .flotante_izquierdo {

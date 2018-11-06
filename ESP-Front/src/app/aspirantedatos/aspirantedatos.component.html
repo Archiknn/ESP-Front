@@ -1,10 +1,12 @@
+<div class="banner">
+</div>
+
 
 <div class="flotante_izquierdo resizeimage">
   <img src="../../assets/Escudo_Ejercito_de_Colombia.png" width="270px" height="300px">
 </div>
 
-
-<form [formGroup] = "form" (ngSubmit)="putAspirante(form.getRawValue())">
+<form [formGroup] = "form_1" (ngSubmit)="putAspirante(form_1.getRawValue())">
 <div class="flotante_derecho">
 
   <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
@@ -47,7 +49,7 @@
             </label>
 
             <label for="pNombre" class="inp" style="margin-left: 10px">
-              <input type="text" id="pNombre" placeholder="&nbsp;" formControlName="pNombre">
+              <input type="text" id="pNombre" placeholder="&nbsp;"  formControlName="pNombre">
               <span class="label">Primer Nombre</span>
               <span class="border"></span>
             </label>
@@ -71,19 +73,19 @@
             </mat-form-field>
 
             <label for="nDocumento" class="inp" style="margin-left: 2%">
-              <input type="text" id="nDocumento" placeholder="&nbsp;">
+              <input type="text" id="nDocumento" placeholder="&nbsp;" formControlName="nDocumento">
               <span class="label">Número</span>
               <span class="border"></span>
             </label>
 
             <label for="fExpedicion" class="inp" style="margin-left: 2%">
-              <input type="date" id="fExpedicion" placeholder="&nbsp;">
+              <input type="date" id="fExpedicion" placeholder="&nbsp;" formControlName="fExpedicion">
               <span class="label">Fecha de Expedición</span>
               <span class="border"></span>
             </label>
 
             <mat-form-field style="margin-left: 2%">
-              <mat-select placeholder="País de Expedición">
+              <mat-select placeholder="País de Expedición" formControlName="slctPEDA">
                 <mat-option *ngFor="let pais of paises" [value]="pais.value">
                   {{pais.viewValue}}
                 </mat-option>
@@ -91,7 +93,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin: 2% 0 0 10%;">
-              <mat-select placeholder="Dept de Expedición">
+              <mat-select placeholder="Dept de Expedición" formControlName="slctDEDA">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
                 </mat-option>
@@ -99,7 +101,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 10px">
-              <mat-select placeholder="Ciudad de Expedición">
+              <mat-select placeholder="Ciudad de Expedición" formControlName="slctCEDA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
                 </mat-option>
@@ -111,13 +113,13 @@
             <h5 style="margin: 4% 0 0 4%; font-weight: bold">Pasaporte</h5>
 
             <label for="nPasaporte" class="inp" style="margin: 3% 0 0 11%;">
-              <input type="text" id="nPasaporte" placeholder="&nbsp;">
+              <input type="text" id="nPasaporte" placeholder="&nbsp;" formControlName="nPasaporte">
               <span class="label">Número</span>
               <span class="border"></span>
             </label>
 
             <mat-form-field style="margin-left: 10%;">
-              <mat-select placeholder="Dept de Expedición">
+              <mat-select placeholder="Dept de Expedición" formControlName="slctDEPA">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
                 </mat-option>
@@ -125,7 +127,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 10%">
-              <mat-select placeholder="Ciudad de Expedición">
+              <mat-select placeholder="Ciudad de Expedición" formControlName="slctCEPA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
                 </mat-option>
@@ -137,25 +139,25 @@
             <h5 style="margin: 4% 0 0 4%; font-weight: bold">Libreta Militar</h5>
 
             <label for="nLMAspirante" class="inp" style="margin: 3% 0 0 11%;">
-              <input type="text" id="nLMAspirante" placeholder="&nbsp;">
+              <input type="text" id="nLMAspirante" placeholder="&nbsp;" formControlName="nLMAspirante">
               <span class="label">Número</span>
               <span class="border"></span>
             </label>
 
             <label for="cLMAspirante" class="inp" style="margin: 3% 0 0 11%;">
-              <input type="text" id="cLMAspirante" placeholder="&nbsp;">
+              <input type="text" id="cLMAspirante" placeholder="&nbsp;" formControlName="cLMAspirante">
               <span class="label">Clase</span>
               <span class="border"></span>
             </label>
 
             <label for="fELMAspirante" class="inp" style="margin: 3% 0 0 11%;">
-              <input type="date" id="fELMAspirante" placeholder="&nbsp;">
+              <input type="date" id="fELMAspirante" placeholder="&nbsp;" formControlName="fELMAspirante">
               <span class="label">Fecha Expedición</span>
               <span class="border"></span>
             </label>
 
             <label for="dLMilitar" class="inp" style="margin: 2% 0 0 11%;">
-              <input type="text" id="dLMilitar" placeholder="&nbsp;">
+              <input type="text" id="dLMilitar" placeholder="&nbsp;" formControlName="dLMilitar">
               <span class="label">Distrito</span>
               <span class="border"></span>
             </label>
@@ -165,7 +167,7 @@
             <h5 style="margin: 4% 0 0 4%; font-weight: bold">Nacimiento</h5>
 
             <mat-form-field style="margin: 3% 0 0 11%;">
-              <mat-select placeholder="País">
+              <mat-select placeholder="País" formControlName="slctPNA">
                 <mat-option *ngFor="let pais of paises" [value]="pais.value">
                   {{pais.viewValue}}
                 </mat-option>
@@ -173,7 +175,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Departamento">
+              <mat-select placeholder="Departamento" formControlName="slctDNA">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
                 </mat-option>
@@ -181,7 +183,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Ciudad">
+              <mat-select placeholder="Ciudad" formControlName="slctCNA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
                 </mat-option>
@@ -189,7 +191,7 @@
             </mat-form-field>
 
             <label for="fNacimiento" class="inp" style="margin-left: 3%;">
-              <input type="date" id="fNacimiento" placeholder="&nbsp;">
+              <input type="date" id="fNacimiento" placeholder="&nbsp;" formControlName="fNacimiento">
               <span class="label">Fecha</span>
               <span class="border"></span>
             </label>
@@ -201,25 +203,25 @@
             <h6 style="margin-left: 10%; font-weight: bold">Actual:</h6>
 
             <label for="dAspirante" class="inp" style="margin: 1% 0 0 15%;">
-              <input type="text" id="dAspirante" placeholder="&nbsp;">
+              <input type="text" id="dAspirante" placeholder="&nbsp;" formControlName="dAspirante">
               <span class="label">Dirección</span>
               <span class="border"></span>
             </label>
 
             <label for="nTCAspirante" class="inp" style="margin-left: 2%;">
-              <input type="text" id="nTCAspirante" placeholder="&nbsp;">
+              <input type="text" id="nTCAspirante" placeholder="&nbsp;" formControlName="nTCAspirante">
               <span class="label">Número de Celular</span>
               <span class="border"></span>
             </label>
 
             <label for="nTFAspirante" class="inp" style="margin-left: 2%;">
-              <input type="text" id="nTFAspirante" placeholder="&nbsp;">
+              <input type="text" id="nTFAspirante" placeholder="&nbsp;" formControlName="nTFAspirante">
               <span class="label">Número de Teléfono Fijo</span>
               <span class="border"></span>
             </label>
 
             <mat-form-field style="margin: 3% 0 0 15%;">
-              <mat-select placeholder="País">
+              <mat-select placeholder="País" formControlName="slctPRActA">
                 <mat-option *ngFor="let pais of paises" [value]="pais.value">
                   {{pais.viewValue}}
                 </mat-option>
@@ -227,7 +229,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Departamento">
+              <mat-select placeholder="Departamento" formControlName="slctDRActA">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
                 </mat-option>
@@ -235,7 +237,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Ciudad">
+              <mat-select placeholder="Ciudad" formControlName="slctCRActA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
                 </mat-option>
@@ -245,14 +247,14 @@
             <br>
             <h6 style="margin: 2% 0 0 10%; font-weight: bold">Anterior:</h6>
 
-            <label for="dAAspirante" class="inp" style="margin: 1% 0% 0% 15%;">
-              <input type="text" id="dAAspirante" placeholder="&nbsp;">
+            <label for="dAAspirante" class="inp" style="margin: 1% 0 0 15%;">
+              <input type="text" id="dAAspirante" placeholder="&nbsp;" formControlName="dAAspirante">
               <span class="label">Dirección</span>
               <span class="border"></span>
             </label>
 
             <mat-form-field style="margin: 3% 0 0 3%;">
-              <mat-select placeholder="País">
+              <mat-select placeholder="País" formControlName="slctPRAntA">
                 <mat-option *ngFor="let pais of paises" [value]="pais.value">
                   {{pais.viewValue}}
                 </mat-option>
@@ -260,7 +262,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Departamento">
+              <mat-select placeholder="Departamento" formControlName="slctDRAntA">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
                 </mat-option>
@@ -268,7 +270,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Ciudad">
+              <mat-select placeholder="Ciudad" formControlName="slctCRAntA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
                 </mat-option>
@@ -276,7 +278,7 @@
             </mat-form-field>
 
             <label for="nTRAspirante" class="inp" style="margin-left: 15%;">
-              <input type="text" id="nTRAspirante" placeholder="&nbsp;">
+              <input type="text" id="nTRAspirante" placeholder="&nbsp;" formControlName="nTRAspirante">
               <span class="label">Número Teléfono</span>
               <span class="border"></span>
             </label>
@@ -286,7 +288,7 @@
             <h5 style="margin: 4% 0 0 4%; font-weight: bold">Información Adicional</h5>
 
             <mat-form-field style="margin: 3% 0 0 10%;">
-              <mat-select placeholder="Estado Civil">
+              <mat-select placeholder="Estado Civil" formControlName="slctECA">
                 <mat-option *ngFor="let estadocivil of estadosciviles" [value]="estadocivil.value">
                   {{estadocivil.viewValue}}
                 </mat-option>
@@ -294,7 +296,7 @@
             </mat-form-field>
 
             <mat-form-field style="margin-left: 3%;">
-              <mat-select placeholder="Grupo Sanguineo">
+              <mat-select placeholder="Grupo Sanguineo" formControlName="slctGSA">
                 <mat-option *ngFor="let gruposanguineo of grupossanguineos" [value]="gruposanguineo.value">
                   {{gruposanguineo.viewValue}}
                 </mat-option>
@@ -302,31 +304,31 @@
             </mat-form-field>
 
             <label for="puOficioA" class="inp" style="margin-left: 3%;">
-              <input type="text" id="puOficioA" placeholder="&nbsp;">
+              <input type="text" id="puOficioA" placeholder="&nbsp;" formControlName="puOficioA">
               <span class="label">Profesión u Oficio</span>
               <span class="border"></span>
             </label>
 
             <label for="tProfesionalA" class="inp" style="margin-left: 3%;">
-              <input type="text" id="tProfesionalA" placeholder="&nbsp;">
+              <input type="text" id="tProfesionalA" placeholder="&nbsp;" formControlName="tProfesionalA">
               <span class="label">Número Tarjeta Profesional</span>
               <span class="border"></span>
             </label>
 
-            <label for="estaturaA" class="inp" style="margin: 2% 0% 0% 10%;">
-              <input type="text" id="estaturaA" placeholder="&nbsp;">
+            <label for="estaturaA" class="inp" style="margin: 2% 0 0 10%;">
+              <input type="text" id="estaturaA" placeholder="&nbsp;" formControlName="estaturaA">
               <span class="label">Estatura (cm)</span>
               <span class="border"></span>
             </label>
 
             <label for="pesoA" class="inp" style="margin-left: 3%;">
-              <input type="text" id="pesoA" placeholder="&nbsp;">
+              <input type="text" id="pesoA" placeholder="&nbsp;" formControlName="pesoA">
               <span class="label">Peso (Kg)</span>
               <span class="border"></span>
             </label>
 
             <label for="cEelecAspirante" class="inp" style="margin-left: 3%;">
-              <input type="text" id="cEelecAspirante" placeholder="&nbsp;">
+              <input type="text" id="cEelecAspirante" placeholder="&nbsp;" formControlName="cEelecAspirante">
               <span class="label">Correo Electrónico</span>
               <span class="border"></span>
             </label>
@@ -341,7 +343,7 @@
                 <div style="font-weight: bold; margin-top: 2%">{{i + 1}}
                   <span>
                     <label for="rSocialesA" class="inp" style="margin-left: 2%;">
-                      <input type="text" id="rSocialesA" placeholder="&nbsp;">
+                      <input type="text" id="rSocialesA" placeholder="&nbsp;" formControlName="rSocialesA">
                       <span class="label">RED Social</span>
                       <span class="border"></span>
                     </label>

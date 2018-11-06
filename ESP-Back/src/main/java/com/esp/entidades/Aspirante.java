@@ -3,12 +3,9 @@ package com.esp.entidades;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -91,7 +88,6 @@ public class Aspirante {
 //	private LibretaMilitar libretaMilitar;
 
 	public Aspirante() {
-
 	}
 
 	public Aspirante(String primerApellido, String segundoApellido, String primerNombre, String segundoNombre,
@@ -426,12 +422,8 @@ public class Aspirante {
 		this.redesSociales = redesSociales;
 	}
 
-//	@OneToOne(mappedBy = "aspirante")
-//	public LibretaMilitar getLibretaMilitar() {
-//		return libretaMilitar;
-//	}
-//
-//	public void setLibretaMilitar(LibretaMilitar libretaMilitar) {
-//		this.libretaMilitar = libretaMilitar;
+//	public String toString() {
+//		return String.format("primerApellido:%s,segundoApellido:%s,primerNombre:%s", primerApellido, segundoApellido,
+//				primerNombre);
 //	}
 }

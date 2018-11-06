@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.esp.entidades.Aspirante;
 
-
-public interface AspiranteRepository extends CrudRepository<Aspirante, String>{
+public interface AspiranteRepository extends CrudRepository<Aspirante, String> {
 
 }

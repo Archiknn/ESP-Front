@@ -1,4 +1,4 @@
-CREATE SCHEMA ESP;
+-- CREATE SCHEMA ESP;
 
 CREATE TABLE aspirante(
 -- nombre_usuario VARCHAR(10),
@@ -25,7 +25,7 @@ estado_civil VARCHAR(20),
 grupo_sanguineo VARCHAR(5),
 ocupacion VARCHAR(50),
 numero_tarjeta_profesional VARCHAR(20),
-estarura INT(3),
+estatura INT(3),
 peso INT(3),
 direccion_actual VARCHAR(30),
 barrio_actual VARCHAR(20),
@@ -371,5 +371,3 @@ ALTER TABLE otros_datos ADD CONSTRAINT fk_otros_datos FOREIGN KEY (numero_docume
 ALTER TABLE recomendacion ADD CONSTRAINT fk_recomendacion FOREIGN KEY (numero_documento_aspirante) REFERENCES aspirante(numero_documento);
 
 ALTER TABLE antecedentes_judiciales ADD CONSTRAINT fk_antecedentes FOREIGN KEY (numero_documento_aspirante) REFERENCES aspirante(numero_documento);
-
-SELECT * FROM ASPIRANTE;

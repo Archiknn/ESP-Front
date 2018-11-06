@@ -2,14 +2,11 @@ package com.esp.entidades;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,8 +28,6 @@ public class LibretaMilitar {
 	@Column(name = "fecha_expedicion")
 	private Date fechaExpedicion;
 
-//	private Aspirante aspirante;
-
 	public LibretaMilitar() {
 	}
 
@@ -52,9 +47,7 @@ public class LibretaMilitar {
 
 	public void setNumero(int numero) {
 		this.numero = numero;
-	}	
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn
+	}
 	public String getNumeroDocumentoAspirante() {
 		return numeroDocumentoAspirante;
 	}
@@ -86,11 +79,4 @@ public class LibretaMilitar {
 	public void setFechaExpedicion(Date fechaExpedicion) {
 		this.fechaExpedicion = fechaExpedicion;
 	}
-	
-//	@Override
-//    public String toString() {
-//        return String.format(
-//                "LibretaMilitar[numero=%d, numeroDocumentoAspirante='%s', clase='%s', distrito='%s', fechaExpedicion='%s']",
-//                numero, aspirante.getNumeroDocumento(), clase, distrito, fechaExpedicion);
-//	}
 }
