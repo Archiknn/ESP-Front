@@ -9,11 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "aspirante", schema = "ESP")
 public class Aspirante {
-
+	
+	//@Autowired
 	@Column(name = "primer_apellido")
 	private String primerApellido;
 	@Column(name = "segundo_apellido")

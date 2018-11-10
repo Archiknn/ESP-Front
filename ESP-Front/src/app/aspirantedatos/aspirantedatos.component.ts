@@ -160,11 +160,6 @@ export class AspirantedatosComponent implements OnInit {
              'segundoNombre' : user.sNombre,
              'tipoDocumento' : user.slctTDA,
              'numeroDocumento' : user.nDocumento
-             },
-             {
-             'numero' : user.nLMAspirante,
-             'clase' : user.cLMAspirante,
-             'distrito' : user.dLMilitar
              }).subscribe();
     };
 

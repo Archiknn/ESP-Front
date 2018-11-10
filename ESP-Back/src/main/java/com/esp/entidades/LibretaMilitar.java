@@ -3,7 +3,6 @@ package com.esp.entidades;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +10,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "libreta_militar", schema = "ESP")
-@Embeddable
 public class LibretaMilitar {
 
 	@Id
@@ -80,3 +78,5 @@ public class LibretaMilitar {
 		this.fechaExpedicion = fechaExpedicion;
 	}
 }
+
+
