@@ -4,16 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "libreta_militar", schema = "ESP")
 public class LibretaMilitar {
-
-	@Id
-	@GeneratedValue
 
 	@Column(name = "numero")
 	private int numero;
@@ -39,6 +35,7 @@ public class LibretaMilitar {
 		this.fechaExpedicion = fechaExpedicion;
 	}
 
+	@Id()
 	public int getNumero() {
 		return numero;
 	}
@@ -46,6 +43,7 @@ public class LibretaMilitar {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+
 	public String getNumeroDocumentoAspirante() {
 		return numeroDocumentoAspirante;
 	}
@@ -78,5 +76,3 @@ public class LibretaMilitar {
 		this.fechaExpedicion = fechaExpedicion;
 	}
 }
-
-

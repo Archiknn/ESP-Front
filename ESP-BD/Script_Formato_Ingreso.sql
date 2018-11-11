@@ -1,4 +1,4 @@
--- CREATE SCHEMA ESP;
+CREATE SCHEMA ESP;
 
 CREATE TABLE aspirante(
 -- nombre_usuario VARCHAR(10),
@@ -13,10 +13,8 @@ pais_expedicion_documento VARCHAR(20),
 departamento_expedicion_documento VARCHAR(20),
 ciudad_expedicion_documento VARCHAR(20),
 numero_pasaporte VARCHAR(20),
--- lugar_expedicion_pasaporte VARCHAR(20),
 departamento_expedicion_pasaporte VARCHAR(20),
 ciudad_expedicion_pasaporte VARCHAR(20),
--- numero_libreta_militar INT(10),
 pais_nacimiento VARCHAR(20),
 departamento_nacimiento VARCHAR(20),
 ciudad_nacimiento VARCHAR(20),
@@ -29,7 +27,6 @@ estatura INT(3),
 peso INT(3),
 direccion_actual VARCHAR(30),
 barrio_actual VARCHAR(20),
--- pais_direccion VARCHAR(20),
 departamento_direccion_actual VARCHAR(20),
 ciudad_direccion_actual VARCHAR(20),
 direccion_anterior VARCHAR(30),

@@ -9,13 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "aspirante", schema = "ESP")
 public class Aspirante {
-	
-	//@Autowired
+
 	@Column(name = "primer_apellido")
 	private String primerApellido;
 	@Column(name = "segundo_apellido")
@@ -141,7 +139,7 @@ public class Aspirante {
 	}
 
 	@Id()
-	@GeneratedValue(generator = "uuid") // (strategy = GenerationType.AUTO)//
+	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 
 	public String getPrimerApellido() {
@@ -423,9 +421,4 @@ public class Aspirante {
 	public void setRedesSociales(String redesSociales) {
 		this.redesSociales = redesSociales;
 	}
-
-//	public String toString() {
-//		return String.format("primerApellido:%s,segundoApellido:%s,primerNombre:%s", primerApellido, segundoApellido,
-//				primerNombre);
-//	}
 }
