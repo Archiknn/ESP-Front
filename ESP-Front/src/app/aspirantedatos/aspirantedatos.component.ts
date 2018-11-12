@@ -3,9 +3,6 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 import { OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
 import {HttpClient} from '@angular/common/http';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-// import * as $ from 'jquery';
-
-declare var $: any;
 
 
 export interface TipoDocumento {
@@ -69,6 +66,8 @@ export class AspirantedatosComponent implements OnInit {
 
     private putURL = 'http://localhost:8080/esp/insertarAspirante';
     form_1: FormGroup;
+    imageURL: string = '/assets/img/default.png';
+    imagenASubir: File = null;
 
     arrayRedSocial: number[];
     arrayRSConguye: number[];
@@ -150,25 +149,59 @@ export class AspirantedatosComponent implements OnInit {
     constructor(private http: HttpClient) {
     }
 
-     putAspirante = function (user) {
-        console.log(user);
+     putAspirante = function (aspirante) {
+        console.log(aspirante);
          return this.http.post(this.putURL,
              {
-             'primerApellido' : user.pApellido,
-             'segundoApellido' : user.sApellido,
-             'primerNombre' : user.pNombre,
-             'segundoNombre' : user.sNombre,
-             'tipoDocumento' : user.slctTDA,
-             'numeroDocumento' : user.nDocumento
+                 'aspirante': {
+                     'primerApellido' : aspirante.pApellido,
+                     'segundoApellido' : aspirante.sApellido,
+                     'primerNombre' : aspirante.pNombre,
+                     'segundoNombre' : aspirante.sNombre,
+                     'tipoDocumento' : aspirante.slctTDA,
+                     'numeroDocumento' : aspirante.nDocumento,
+                     'fechaExpedicionDocumento' : aspirante.fExpedicion,
+                     'paisExpedicionDocumento' : aspirante.slctPEDA,
+                     'departamentoExpedicionDocumento' : aspirante.slctDEDA,
+                     'ciudadExpedicionDocumento' : aspirante.slctCEDA,
+                     'numeroPasaporte' : aspirante.nPasaporte,
+                     'departamentoExpedicionPasaporte' : aspirante.slctDEPA,
+                     'ciudadExpedicionPasaporte' : aspirante.slctCEPA,
+                     'paisNacimiento' : aspirante.slctPNA,
+                     'departamentoNacimiento' : aspirante.slctDNA,
+                     'ciudadNacimiento' : aspirante.slctCNA,
+                     'fechaNacimiento' : aspirante.fNacimiento,
+                     'estadoCivil' : aspirante.slctECA,
+                     'grupoSanguineo' : aspirante.slctGSA,
+                     'ocupacion' : aspirante.puOficioA,
+                     'numeroTarjetaProfesional' : aspirante.tProfesionalA,
+                     'estatura' : aspirante.estaturaA,
+                     'peso' : aspirante.pesoA,
+                     'direccionActual' : aspirante.dAspirante,
+                     'barrioActual' : aspirante.bAspirante,
+                     'departamentoDireccionActual' : aspirante.slctDRActA,
+                     'ciudadDireccionActual' : aspirante.slctCRActA,
+                     'direccionAnterior' : aspirante.dAAspirante,
+                     'barrioAnterior' : aspirante.bAAspirante,
+                     'departamentoDireccionAnterior' : aspirante.slctDRAntA,
+                     'ciudadDireccionAnterior' : aspirante.slctCRActA,
+                     'numeroCelular' : aspirante.nTCAspirante,
+                     'numeroTelefonoActual' : aspirante.nTFAspirante,
+                     'numeroTelefonoAnterior' : aspirante.nTRAspirante,
+                     'correoElectronico' : aspirante.cEelecAspirante,
+                     'redesSociales' : aspirante.rSocialesA
+                 },
+                 'libretaMilitar' : {
+                     'numero' : aspirante.nLMAspirante,
+                     'numeroDocumentoAspirante' : aspirante.nDocumento,
+                     'clase' : aspirante.cLMAspirante,
+                     'distrito' : aspirante.dLMilitar,
+                     'fechaExpedicion' :  aspirante.fELMAspirante
+                 }
              }).subscribe();
     };
 
     ngOnInit() {
-        $(document).ready(function () {
-            $('#boton').click(function () {
-                window.alert('Hola');
-            });
-        });
 
         this.arrayRSConguye = [0];
         this.arrayNHijos = [0];
@@ -219,14 +252,14 @@ export class AspirantedatosComponent implements OnInit {
             fNacimiento: new FormControl('', [Validators.required]),
 
             dAspirante: new FormControl('', [Validators.maxLength(30), Validators.required]),
+            bAspirante: new FormControl('', [Validators.maxLength(30)]),
             nTCAspirante: new FormControl('', [Validators.maxLength(10)]),
             nTFAspirante: new FormControl('', [Validators.maxLength(10)]),
-            slctPRActA: new FormControl(''),
             slctDRActA: new FormControl(''),
             slctCRActA: new FormControl(''),
 
             dAAspirante: new FormControl('', [Validators.maxLength(30)]),
-            slctPRAntA: new FormControl(''),
+            bAAspirante: new FormControl('', [Validators.maxLength(20)]),
             slctDRAntA: new FormControl(''),
             slctCRAntA: new FormControl(''),
             nTRAspirante: new FormControl('', [Validators.maxLength(10)]),
@@ -240,6 +273,16 @@ export class AspirantedatosComponent implements OnInit {
             cEelecAspirante: new FormControl('', [Validators.maxLength(30)]),
             rSocialesA: new FormControl('', [Validators.maxLength(100)])
         });
+    }
+
+    handleFileInput(file: FileList) {
+        this.imagenASubir = file.item(0);
+
+        const reader = new FileReader();
+        reader.onload = (event: any) => {
+            this.imageURL = event.target.result;
+        };
+        reader.readAsDataURL(this.imagenASubir);
     }
 
     agregarRedSocial() {

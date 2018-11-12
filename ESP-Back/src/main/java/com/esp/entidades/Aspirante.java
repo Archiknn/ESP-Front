@@ -48,6 +48,8 @@ public class Aspirante {
 	private String ciudadNacimiento;
 	@Column(name = "fecha_nacimiento")
 	private Date fechaNacimiento;
+	@Column(name = "estado_civil")
+	private String estadoCivil;
 	@Column(name = "grupo_sanguineo")
 	private String grupoSanguineo;
 	@Column(name = "ocupacion")
@@ -276,6 +278,14 @@ public class Aspirante {
 
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getEstadoCivil() {
+		return estadoCivil;
+	}
+
+	public void setEstadoCivil(String estadoCivil) {
+		this.estadoCivil = estadoCivil;
 	}
 
 	public String getGrupoSanguineo() {

@@ -11,6 +11,7 @@ body {
 * {
     box-sizing: border-box;
 }
+
 .inp {
     position: relative;
     margin: auto;
@@ -73,6 +74,7 @@ body {
 .inp input:focus + span + .border {
     transform: scaleX(1);
 }
+
 
 .banner{
     width: 100%;

@@ -12,7 +12,7 @@
   <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
 
     <mat-tab label="BIENVENIDA">
-      <div style="width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
+      <div style="width: 1200px; height: 502px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
         <h5 style="margin: 4% 0 0 28%; font-weight: bold">ESTUDIO DE SEGURIDAD PERSONAL INGRESO</h5> <!-- Creación Título "Nombre Completo" -->
         <h5 style="margin-left: 45%; font-weight: bold">NR-1</h5>
         <div>
@@ -23,10 +23,19 @@
                                                 BAJO RESERVA LEGAL y tendrá el nivel de seguridad RESTRINGIDO.</label>
           </div>
 
-          <div style="width: 200px; height: 250px; border-radius: 20px; border-style: solid; margin: 5% 0 0 10%; float: left;">
-            <label style="margin: 20% 0 0 20%">Foto Aspirante</label>
-            <button mat-mini-fab color="primary" style="margin: 20% 0 0 40%">+</button>
+
+          <form #imageForm=ngForm>
+          <div style="width: 200px; height: 250px; margin: 5% 0 0 5%; float: left;">
+            <!--<label style="margin: 20% 0 0 20%">Foto Aspirante</label>
+            <button mat-mini-fab color="primary" style="margin: 20% 0 0 40%">+</button>-->
+
+
+            <img [src]="imageURL" style="width:200px;height:250px; border-radius: 20px; border-style: dashed; border-color: #0695ff">
+            <br>
+            <input type="file" accept="image/*" (change)="handleFileInput($event.target.files)">
+              <!--<button type="submit" class="btn-large btn-submit">Submit</button>-->
           </div>
+          </form>
         </div>
       </div>
     </mat-tab>
@@ -34,7 +43,6 @@
     <mat-tab label="I. DATOS PERSONALES"> <!-- TAB DATOS PERSONALES -->
       <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
           <h5 style="margin: 4% 0 0 4%; font-weight: bold">Nombre Completo</h5> <!-- Creación Título "Nombre Completo" -->
-
           <div style="margin: 3% 0 0 11%">
             <label for="pApellido" class="inp">
               <input type="text" id="pApellido" placeholder="&nbsp;" formControlName="pApellido">
@@ -208,6 +216,12 @@
               <span class="border"></span>
             </label>
 
+            <label for="bAspirante" class="inp" style="margin: 1% 0 0 2%;">
+              <input type="text" id="bAspirante" placeholder="&nbsp;" formControlName="bAspirante">
+              <span class="label">Barrio</span>
+              <span class="border"></span>
+            </label>
+
             <label for="nTCAspirante" class="inp" style="margin-left: 2%;">
               <input type="text" id="nTCAspirante" placeholder="&nbsp;" formControlName="nTCAspirante">
               <span class="label">Número de Celular</span>
@@ -220,15 +234,7 @@
               <span class="border"></span>
             </label>
 
-            <mat-form-field style="margin: 3% 0 0 15%;">
-              <mat-select placeholder="País" formControlName="slctPRActA">
-                <mat-option *ngFor="let pais of paises" [value]="pais.value">
-                  {{pais.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-
-            <mat-form-field style="margin-left: 3%;">
+            <mat-form-field style="margin: 2% 0 0 15%;">
               <mat-select placeholder="Departamento" formControlName="slctDRActA">
                 <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                   {{departamento.viewValue}}
@@ -253,13 +259,11 @@
               <span class="border"></span>
             </label>
 
-            <mat-form-field style="margin: 3% 0 0 3%;">
-              <mat-select placeholder="País" formControlName="slctPRAntA">
-                <mat-option *ngFor="let pais of paises" [value]="pais.value">
-                  {{pais.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+            <label for="bAAspirante" class="inp" style="margin: 1% 0 0 2%;">
+              <input type="text" id="bAAspirante" placeholder="&nbsp;" formControlName="bAAspirante">
+              <span class="label">Barrio</span>
+              <span class="border"></span>
+            </label>
 
             <mat-form-field style="margin-left: 3%;">
               <mat-select placeholder="Departamento" formControlName="slctDRAntA">
@@ -269,7 +273,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field style="margin-left: 3%;">
+            <mat-form-field style="margin-left: 15%;">
               <mat-select placeholder="Ciudad" formControlName="slctCRAntA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
@@ -277,9 +281,9 @@
               </mat-select>
             </mat-form-field>
 
-            <label for="nTRAspirante" class="inp" style="margin-left: 15%;">
+            <label for="nTRAspirante" class="inp" style="margin-left: 5%;">
               <input type="text" id="nTRAspirante" placeholder="&nbsp;" formControlName="nTRAspirante">
-              <span class="label">Número Teléfono</span>
+              <span class="label">Número de Teléfono Fijo</span>
               <span class="border"></span>
             </label>
           </div>
@@ -851,7 +855,7 @@
 
     <mat-tab label="III. INFORMACIÓN ACADÉMICA"> <!-- TAB INFORMACIÓN ACADÉMICA -->
       <div style="overflow-y: scroll; width: 1200px; height: 550px"> <!-- Creación DIV interno del cuadro y barra de exploración -->
-        <h5 style="margin: 4% 0% 0% 4%; font-weight: bold">Estudios Realizados</h5> <!-- Creación Título "Estudios Realizados" -->
+        <h5 style="margin: 4% 0 0 4%; font-weight: bold">Estudios Realizados</h5> <!-- Creación Título "Estudios Realizados" -->
         <div style="margin: 0 3% 0 3%">
           <button mat-mini-fab color="primary" (click)="agregarEstudioAspirante()" [disabled]="arrayEstudioAspirante.length === 6" style="margin-left: 40%">+</button>
           <button mat-mini-fab color="primary" (click)="quitarEstudioAspirante()" [disabled]="arrayEstudioAspirante.length === 1">-</button>
