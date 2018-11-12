@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AspirantedatosComponent } from './aspirantedatos/aspirantedatos.component';
+import { MensajeestadoComponent } from './mensajeestado/mensajeestado.component';
 import { RouterModule, Routes } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
@@ -43,17 +44,19 @@ import {MatAutocompleteModule,
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
+
 const appRoutes: Routes = [
 
     {path: '', component: AppComponent},
-    {path: 'aspirantedatos', component: AspirantedatosComponent}
-
+    {path: 'aspirantedatos', component: AspirantedatosComponent},
+    {path: 'mensajeestado', component: MensajeestadoComponent}
     ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AspirantedatosComponent
+    AspirantedatosComponent,
+    MensajeestadoComponent
   ],
   imports: [
     BrowserModule,

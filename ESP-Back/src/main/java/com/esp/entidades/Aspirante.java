@@ -87,8 +87,6 @@ public class Aspirante {
 	@Column(name = "redes_sociales")
 	private String redesSociales;
 
-//	private LibretaMilitar libretaMilitar;
-
 	public Aspirante() {
 	}
 
@@ -140,10 +138,13 @@ public class Aspirante {
 		this.redesSociales = redesSociales;
 	}
 
+	
+//	
+//	
+	
 	@Id()
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-
 	public String getPrimerApellido() {
 		return primerApellido;
 	}
@@ -175,6 +176,8 @@ public class Aspirante {
 	public void setSegundoNombre(String segundoNombre) {
 		this.segundoNombre = segundoNombre;
 	}
+	
+	
 
 	public String getTipoDocumento() {
 		return tipoDocumento;

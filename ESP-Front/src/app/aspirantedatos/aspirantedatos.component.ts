@@ -1,9 +1,9 @@
 import {Component, Injectable, ViewEncapsulation} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
-import { OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
+import {OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
 import {HttpClient} from '@angular/common/http';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-
+import {User} from './User';
 
 export interface TipoDocumento {
     value: string;
@@ -65,6 +65,7 @@ export interface GrupoSanguineo {
 export class AspirantedatosComponent implements OnInit {
 
     private putURL = 'http://localhost:8080/esp/insertarAspirante';
+    private userUrl = 'http://localhost:8080/esp/consultar';
     form_1: FormGroup;
     imageURL: string = '/assets/img/default.png';
     imagenASubir: File = null;
@@ -149,8 +150,15 @@ export class AspirantedatosComponent implements OnInit {
     constructor(private http: HttpClient) {
     }
 
+    aspirante: User = new User();
+
+    getUserById(id: string) {
+        id = '204ed8f7-a44b-47bf-b8a0-7931d15fe959';
+        return console.log(this.http.get<User>(this.userUrl + '/' + id).subscribe());
+        // console.log(this.aspirante.primerApellido);
+    }
+
      putAspirante = function (aspirante) {
-        console.log(aspirante);
          return this.http.post(this.putURL,
              {
                  'aspirante': {
@@ -197,8 +205,27 @@ export class AspirantedatosComponent implements OnInit {
                      'clase' : aspirante.cLMAspirante,
                      'distrito' : aspirante.dLMilitar,
                      'fechaExpedicion' :  aspirante.fELMAspirante
-                 }
+                 }/*,
+                 'companeraSentimental' : {
+                     'numeroDocumento' : aspirante.nDCSentimental,
+                     'numeroDocumentoAspirante' : aspirante.nDocumento,
+                     'tipoDocumento' : aspirante.slctTDCSA,
+                     'primerApellido' : aspirante.pACSentimental,
+                     'segundoApellido' : aspirante.sACSentimental,
+                     'primerNombre' : aspirante.pNCSentimental,
+                     'segundoNombre' : aspirante.sNCSentimental,
+                     'ocupacion' : aspirante.pUOCSentimental,
+                     'direccion' : aspirante.dCSentimental,
+                     'departamentoDireccion' : aspirante.slctDDCSA,
+                     'ciudadDireccion' : aspirante.slctCDCSA,
+                     'numeroCelular' : aspirante.nCCSentimental,
+                     'numeroTelefono' : aspirante.nTCSentimental,
+                     'correoElectronico' : aspirante.cECSentimental,
+                     'redesSociales' : aspirante.rSCSentimental
+                 }*/
              }).subscribe();
+
+
     };
 
     ngOnInit() {
@@ -226,6 +253,7 @@ export class AspirantedatosComponent implements OnInit {
 
         this.form_1 = new FormGroup({
 
+            // Aspirante
             pApellido: new FormControl('', [Validators.maxLength(20), Validators.required]),
             sApellido: new FormControl('', [Validators.maxLength(20), Validators.required]),
             pNombre: new FormControl('', [Validators.maxLength(20), Validators.required]),
@@ -252,11 +280,11 @@ export class AspirantedatosComponent implements OnInit {
             fNacimiento: new FormControl('', [Validators.required]),
 
             dAspirante: new FormControl('', [Validators.maxLength(30), Validators.required]),
-            bAspirante: new FormControl('', [Validators.maxLength(30)]),
+            bAspirante: new FormControl('', [Validators.maxLength(30), Validators.required]),
             nTCAspirante: new FormControl('', [Validators.maxLength(10)]),
             nTFAspirante: new FormControl('', [Validators.maxLength(10)]),
-            slctDRActA: new FormControl(''),
-            slctCRActA: new FormControl(''),
+            slctDRActA: new FormControl('', [Validators.required]),
+            slctCRActA: new FormControl('', [Validators.required]),
 
             dAAspirante: new FormControl('', [Validators.maxLength(30)]),
             bAAspirante: new FormControl('', [Validators.maxLength(20)]),
@@ -266,12 +294,30 @@ export class AspirantedatosComponent implements OnInit {
 
             slctECA: new FormControl('', [Validators.required]),
             slctGSA: new FormControl('', [Validators.required]),
-            puOficioA: new FormControl('', [Validators.maxLength(50)]),
+            puOficioA: new FormControl('', [Validators.required, Validators.maxLength(50)]),
             tProfesionalA: new FormControl('', [Validators.maxLength(20)]),
             estaturaA: new FormControl('', [Validators.maxLength(3), Validators.required]),
             pesoA: new FormControl('', [Validators.maxLength(3), Validators.required]),
             cEelecAspirante: new FormControl('', [Validators.maxLength(30)]),
-            rSocialesA: new FormControl('', [Validators.maxLength(100)])
+            rSocialesA: new FormControl('', [Validators.maxLength(100)]),
+
+
+            // Compañera(o) Sentimental
+            pACSentimental: new FormControl('', [Validators.maxLength(20)]),
+            sACSentimental: new FormControl('', [Validators.maxLength(20)]),
+            pNCSentimental: new FormControl('', [Validators.maxLength(20)]),
+            sNCSentimental: new FormControl('', [Validators.maxLength(20)]),
+            slctTDCSA: new FormControl(''),
+            nDCSentimental: new FormControl('', [Validators.maxLength(20)]),
+            pUOCSentimental: new FormControl('', [Validators.maxLength(50)]),
+            dCSentimental: new FormControl('', [Validators.maxLength(30)]),
+            slctDDCSA: new FormControl(''),
+            slctCDCSA: new FormControl(''),
+            nCCSentimental: new FormControl('', [Validators.maxLength(10)]),
+            nTCSentimental: new FormControl('', [Validators.maxLength(10)]),
+            cECSentimental: new FormControl('', [Validators.maxLength(30)]),
+            rSCSentimental: new FormControl('', [Validators.maxLength(100)]),
+
         });
     }
 

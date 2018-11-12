@@ -6,8 +6,8 @@ import java.nio.file.Paths;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
+//import org.springframework.core.io.Resource;
+//import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -48,7 +48,7 @@ public class GuardarFotoAspirante {
 		try {
 			Files.createDirectory(directorio);
 		} catch (Exception e) {
-			throw new RuntimeException("Could not initialize storage!");
+			throw new RuntimeException("No se pudo crear el directorio!");
 		}
 	}
 }

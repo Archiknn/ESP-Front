@@ -25,16 +25,17 @@
 
 
           <form #imageForm=ngForm>
-          <div style="width: 200px; height: 250px; margin: 5% 0 0 5%; float: left;">
-            <!--<label style="margin: 20% 0 0 20%">Foto Aspirante</label>
-            <button mat-mini-fab color="primary" style="margin: 20% 0 0 40%">+</button>-->
+            <div style="width: 200px; height: 250px; margin: 5% 0 0 5%; float: left;">
+              <label style="margin: 0 0 0 20%; font-weight: bold">Foto Aspirante</label>
+              <!--<button mat-mini-fab color="primary" style="margin: 20% 0 0 40%">+</button>-->
 
 
-            <img [src]="imageURL" style="width:200px;height:250px; border-radius: 20px; border-style: dashed; border-color: #0695ff">
-            <br>
-            <input type="file" accept="image/*" (change)="handleFileInput($event.target.files)">
-              <!--<button type="submit" class="btn-large btn-submit">Submit</button>-->
-          </div>
+              <img [src]="imageURL" style="width:200px;height:250px; border-radius: 20px; border-style: dashed; border-color: #0695ff">
+              <br>
+              <br>
+              <input type="file" accept="image/*" (change)="handleFileInput($event.target.files)">
+                <!--<button type="submit" class="btn-large btn-submit">Submit</button>-->
+            </div>
           </form>
         </div>
       </div>
@@ -108,13 +109,18 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field style="margin-left: 10px">
+            <mat-form-field style="margin-left: 3%">
               <mat-select placeholder="Ciudad de Expedición" formControlName="slctCEDA">
                 <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                   {{ciudad.viewValue}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
+
+            <br>
+            <h6 style="margin: 2% 0 0 10%; font-weight: bold">Fotocopia de la Cédula (ambos lados) 120%:</h6>
+            <input type="file" accept="image/*" style="margin-left: 10%">
+
           </div>
 
           <div>
@@ -251,6 +257,18 @@
             </mat-form-field>
 
             <br>
+            <h6 style="margin: 2% 0 0 10%; font-weight: bold">Foto de la vivienda:</h6>
+            <input type="file" accept="image/*" style="margin-left: 10%">
+
+            <br>
+            <p style="margin: 2% 0 0 10%">
+              INSTRUCCIONES: <span><br></span>
+              1. Si la vivienda es APARTAMENTO la fotografía debe ser de la fachada del conjunto detallando la nomenclatura.<span><br></span>
+              2. Si la vivienda es CASA la fotografía debe ser de la fachada de la misma detallando la nomenclatura.<span><br></span>
+              3. Si la vivienda es EN AREA RURAL la fotografía debe ser panorámica y se debe anexar ubicación en un croquis (Google Maps).
+            </p>
+
+            <br>
             <h6 style="margin: 2% 0 0 10%; font-weight: bold">Anterior:</h6>
 
             <label for="dAAspirante" class="inp" style="margin: 1% 0 0 15%;">
@@ -369,31 +387,31 @@
 
         <div style="margin: 3% 0 0 11%">
           <label for="pACSentimental" class="inp">
-            <input type="text" id="pACSentimental" placeholder="&nbsp;">
+            <input type="text" id="pACSentimental" placeholder="&nbsp;" formControlName="pACSentimental">
             <span class="label">Primer Apellido</span>
             <span class="border"></span>
           </label>
 
           <label for="sACSentimental" class="inp" style="margin-left: 10px">
-            <input type="text" id="sACSentimental" placeholder="&nbsp;">
+            <input type="text" id="sACSentimental" placeholder="&nbsp;" formControlName="sACSentimental">
             <span class="label">Segundo Apellido</span>
             <span class="border"></span>
           </label>
 
           <label for="pNCSentimental" class="inp" style="margin-left: 10px">
-            <input type="text" id="pNCSentimental" placeholder="&nbsp;">
+            <input type="text" id="pNCSentimental" placeholder="&nbsp;" formControlName="pNCSentimental">
             <span class="label">Primer Nombre</span>
             <span class="border"></span>
           </label>
 
           <label for="sNCSentimental" class="inp" style="margin-left: 10px">
-            <input type="text" id="sNCSentimental" placeholder="&nbsp;">
+            <input type="text" id="sNCSentimental" placeholder="&nbsp;" formControlName="sNCSentimental">
             <span class="label">Segundo Nombre</span>
             <span class="border"></span>
           </label>
 
           <mat-form-field style="margin: 2% 0 0 0">
-            <mat-select placeholder="Tipo de Documento">
+            <mat-select placeholder="Tipo de Documento" formControlName="slctTDCSA">
               <mat-option *ngFor="let tipodocumento of tiposdocumentos" [value]="tipodocumento.value">
                 {{tipodocumento.viewValue}}
               </mat-option>
@@ -401,25 +419,25 @@
           </mat-form-field>
 
           <label for="nDCSentimental" class="inp" style="margin-left: 3%">
-            <input type="text" id="nDCSentimental" placeholder="&nbsp;">
+            <input type="text" id="nDCSentimental" placeholder="&nbsp;" formControlName="nDCSentimental">
             <span class="label">Número de Documento</span>
             <span class="border"></span>
           </label>
 
           <label for="pUOCSentimental" class="inp" style="margin-left: 2%;">
-            <input type="text" id="pUOCSentimental" placeholder="&nbsp;">
+            <input type="text" id="pUOCSentimental" placeholder="&nbsp;" formControlName="pUOCSentimental">
             <span class="label">Profesión u Oficio</span>
             <span class="border"></span>
           </label>
 
           <label for="dCSentimental" class="inp" style="margin-left: 2%;">
-            <input type="text" id="dCSentimental" placeholder="&nbsp;">
+            <input type="text" id="dCSentimental" placeholder="&nbsp;" formControlName="dCSentimental">
             <span class="label">Dirección</span>
             <span class="border"></span>
           </label>
 
           <mat-form-field>
-            <mat-select placeholder="Departamento">
+            <mat-select placeholder="Departamento" formControlName="slctDDCSA">
               <mat-option *ngFor="let departamento of departamentos" [value]="departamento.value">
                 {{departamento.viewValue}}
               </mat-option>
@@ -427,7 +445,7 @@
           </mat-form-field>
 
           <mat-form-field style="margin-left: 3%;">
-            <mat-select placeholder="Ciudad">
+            <mat-select placeholder="Ciudad" formControlName="slctCDCSA">
               <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.value">
                 {{ciudad.viewValue}}
               </mat-option>
@@ -435,19 +453,19 @@
           </mat-form-field>
 
           <label for="nCCSentimental" class="inp" style="margin: 2% 0 0 2%;">
-            <input type="text" id="nCCSentimental" placeholder="&nbsp;">
+            <input type="text" id="nCCSentimental" placeholder="&nbsp;" formControlName="nCCSentimental">
             <span class="label">Número de Celular</span>
             <span class="border"></span>
           </label>
 
           <label for="nTCSentimental" class="inp" style="margin-left: 2%;">
-            <input type="text" id="nTCSentimental" placeholder="&nbsp;">
+            <input type="text" id="nTCSentimental" placeholder="&nbsp;" formControlName="nTCSentimental">
             <span class="label">Número de Teléfono</span>
             <span class="border"></span>
           </label>
 
           <label for="cECSentimental" class="inp">
-            <input type="email" id="cECSentimental" placeholder="&nbsp;">
+            <input type="email" id="cECSentimental" placeholder="&nbsp;" formControlName="cECSentimental">
             <span class="label">Correo Electrónico</span>
             <span class="border"></span>
           </label>
@@ -462,7 +480,7 @@
               <div style="font-weight: bold; font-size: 20px; margin-top: 2%">{{i + 1}}
                 <span>
                     <label for="rSCSentimental" class="inp" style="margin-left: 2%;">
-                      <input type="text" id="rSCSentimental" placeholder="&nbsp;">
+                      <input type="text" id="rSCSentimental" placeholder="&nbsp;" formControlName="rSCSentimental">
                       <span class="label">RED Social</span>
                       <span class="border"></span>
                     </label>
@@ -525,8 +543,6 @@
                         <span class="label">Fecha de Nacimiento</span>
                         <span class="border"></span>
                       </label>
-
-
                   </span>
               </div>
             </div>
@@ -936,6 +952,20 @@
               </div>
             </div> <!-- END IDIOMA ASPIRANTE-->
           </div>
+
+          <h5 style="margin: 4% 0 3% 0; font-weight: bold">Documentos</h5> <!-- Creación Título "Documentos" -->
+
+          <h6 style="margin: 1% 0 0 5%; font-weight: bold">Diploma Bachillerato:</h6>
+          <input type="file" accept="application/pdf" style="margin-left: 5%">
+          <h6 style="margin: 1% 0 0 5%; font-weight: bold">Acta de Grado Bachillerato:</h6>
+          <input type="file" accept="application/pdf*" style="margin-left: 5%">
+          <h6 style="margin: 1% 0 0 5%; font-weight: bold">Otros:</h6>
+          <input type="file" accept="application/pdf" style="margin-left: 5%">
+          <br>
+          <input type="file" accept="application/pdf*" style="margin-left: 5%">
+          <br>
+          <input type="file" accept="application/pdf" style="margin: 0 0 5% 5%">
+
         </div>
       </div><!-- END DIV INTERNO -->
     </mat-tab> <!-- END TAB INFORMACIÓN ACADÉMICA -->
@@ -1019,6 +1049,16 @@
               </div>
             </div>
           </div> <!-- END DATOS EMPRESA -->
+        </div>
+        <div style="margin: 0 3% 0 3%">
+          <h5 style="margin: 4% 0 3% 0; font-weight: bold">Documentos</h5> <!-- Creación Título "Documentos" -->
+
+          <h6 style="margin: 1% 0 0 5%; font-weight: bold">Referencia Laboral:</h6>
+          <input type="file" accept="application/pdf" style="margin-left: 5%">
+          <h6 style="margin: 1% 0 0 5%; font-weight: bold">Referencia Laboral:</h6>
+          <input type="file" accept="application/pdf*" style="margin-left: 5%">
+          <h6 style="margin: 1% 0 0 5%; font-weight: bold">Referencia Laboral:</h6>
+          <input type="file" accept="application/pdf" style="margin: 0 0 5% 5%">
         </div>
       </div>
     </mat-tab>
@@ -1740,6 +1780,10 @@
 </div>
 
 <div class="button-row flotante_boton_enviar">
-  <button mat-stroked-button color="primary" (click)="putAspirante()">Guardar y Enviar</button>
+  <button mat-raised-button color="primary" (click)="putAspirante()" routerLink="/mensajeestado">Guardar y Enviar</button>
 </div>
 </form>
+
+<!--<div class="button-row flotante_boton_enviar">
+  <button mat-raised-button color="primary" (click)="getUserById('hola')">Consultar</button>
+</div>-->
