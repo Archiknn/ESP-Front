@@ -159,6 +159,7 @@ export class AspirantedatosComponent implements OnInit {
     }
 
      putAspirante = function (aspirante) {
+         window.alert('¡Datos Insetados Correctamente!');
          return this.http.post(this.putURL,
              {
                  'aspirante': {

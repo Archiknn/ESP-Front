@@ -39,8 +39,8 @@ public class RecursoAspirante {
 	private AspiranteRepository aspiranteRepository;
 	@Autowired
 	private LibretaMilitarRepository libretaMilitarRepository;
-	@Autowired
-	private CompaneraSentimentalRepository companeraSentimentalRepository;
+//	@Autowired
+//	private CompaneraSentimentalRepository companeraSentimentalRepository;
 	@Autowired
 	GuardarFotoAspirante storageService;
 	

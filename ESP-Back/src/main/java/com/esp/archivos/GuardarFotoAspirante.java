@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class GuardarFotoAspirante {
 	
 	Logger log = LoggerFactory.getLogger(this.getClass().getName());
-	private final Path directorio = Paths.get("Aspirante Foto");
+	private final Path directorio = Paths.get("Aspirante Fotos");
 
 	public void guardar(MultipartFile archivo) {
 		try {
