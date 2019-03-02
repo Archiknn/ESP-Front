@@ -206,7 +206,7 @@ export class AspirantedatosComponent implements OnInit {
                      'clase' : aspirante.cLMAspirante,
                      'distrito' : aspirante.dLMilitar,
                      'fechaExpedicion' :  aspirante.fELMAspirante
-                 }/*,
+                 },
                  'companeraSentimental' : {
                      'numeroDocumento' : aspirante.nDCSentimental,
                      'numeroDocumentoAspirante' : aspirante.nDocumento,
@@ -223,7 +223,7 @@ export class AspirantedatosComponent implements OnInit {
                      'numeroTelefono' : aspirante.nTCSentimental,
                      'correoElectronico' : aspirante.cECSentimental,
                      'redesSociales' : aspirante.rSCSentimental
-                 }*/
+                 }
              }).subscribe();
 
 
@@ -302,7 +302,6 @@ export class AspirantedatosComponent implements OnInit {
             cEelecAspirante: new FormControl('', [Validators.maxLength(30)]),
             rSocialesA: new FormControl('', [Validators.maxLength(100)]),
 
-
             // Compañera(o) Sentimental
             pACSentimental: new FormControl('', [Validators.maxLength(20)]),
             sACSentimental: new FormControl('', [Validators.maxLength(20)]),
@@ -318,6 +317,8 @@ export class AspirantedatosComponent implements OnInit {
             nTCSentimental: new FormControl('', [Validators.maxLength(10)]),
             cECSentimental: new FormControl('', [Validators.maxLength(30)]),
             rSCSentimental: new FormControl('', [Validators.maxLength(100)]),
+
+            //
 
         });
     }
